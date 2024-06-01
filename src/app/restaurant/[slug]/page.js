@@ -15,7 +15,7 @@ import StreetView from "@/components/single/StreetView";
 import UserActionButtons from "@/components/single/UserActionButtons";
 
 const fetchRestaurantData = async (slug) => {
-  const response = await fetch(`http://localhost:3000/api/restaurant/${slug}`);
+  const response = await fetch(`/api/restaurant/${slug}`);
   if (!response.ok) {
     throw new Error("Failed to fetch data");
   }

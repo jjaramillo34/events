@@ -6,12 +6,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const fetchRestaurants = async (page) => {
-  const response = await fetch(
-    `http://localhost:3000/api/restaurants/${page}`,
-    {
-      cache: "no-store",
-    }
-  );
+  const response = await fetch(`/api/restaurants/${page}`, {
+    cache: "no-store",
+  });
   if (!response.ok) {
     throw new Error("Failed to fetch data");
   }
