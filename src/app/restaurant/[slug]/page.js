@@ -1,4 +1,5 @@
 import React from "react";
+import { getBaseUrl } from "../../../../helpers/utils";
 import MainLayout from "../../../components/layouts/MainLayout";
 import Breadcrumbs from "../../../components/single/Breadcrumbs";
 import RestaurantImageOverlay from "../../../components/single/RestaurantImageOverlay";
@@ -15,7 +16,8 @@ import StreetView from "@/components/single/StreetView";
 import UserActionButtons from "@/components/single/UserActionButtons";
 
 const fetchRestaurantData = async (slug) => {
-  const response = await fetch(`/api/restaurant/${slug}`);
+  const baseUrl = getBaseUrl();
+  const response = await fetch(`${baseUrl}/api/restaurant/${slug}`);
   if (!response.ok) {
     throw new Error("Failed to fetch data");
   }

@@ -4,6 +4,19 @@ const path = require("path");
 const slugify = require("slugify");
 const { parsePhoneNumberFromString } = require("libphonenumber-js");
 
+function getBaseUrl() {
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+    console.log(process.env.VERCEL_URL);
+  } else if (process.env.NEXT_PUBLIC_VERCEL_ENV === "production") {
+    console.log(process.env.NEXT_PUBLIC_VERCEL_ENV);
+    return "https://events-ten-ivory.vercel.app/";
+  } else {
+    console.log("http://localhost:3000");
+    return "http://localhost:3000";
+  }
+}
+
 function loadData(filePath) {
   try {
     const jsonDirectory = path.join(process.cwd(), "public", filePath); // 'data/restaurants.json
@@ -60,4 +73,5 @@ module.exports = {
   formatPhones,
   getVersion,
   getHealth,
+  getBaseUrl,
 };
