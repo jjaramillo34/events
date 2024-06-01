@@ -67,7 +67,21 @@ const RestaurantPage = async ({ params }) => {
     );
   } catch (error) {
     console.error("Error fetching restaurant data:", error);
-    return <div>Error fetching restaurant data</div>;
+    return (
+      <MainLayout title="Error">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center">
+            <h2 className="text-2xl font-semibold text-red-500">
+              Error fetching restaurant data
+            </h2>
+            <p className="text-gray-600">
+              An error occurred while fetching restaurant data. Please try again
+              later.
+            </p>
+          </div>
+        </div>
+      </MainLayout>
+    );
   }
 };
 
