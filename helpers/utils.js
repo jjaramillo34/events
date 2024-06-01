@@ -6,7 +6,7 @@ const { parsePhoneNumberFromString } = require("libphonenumber-js");
 
 function loadData(filePath) {
   try {
-    const jsonDirectory = path.join(process.cwd(), filePath);
+    const jsonDirectory = path.join(process.cwd(), "public", filePath); // 'data/restaurants.json
     const fileContents = fs.readFileSync(jsonDirectory, "utf8");
     const data = JSON.parse(fileContents);
 
