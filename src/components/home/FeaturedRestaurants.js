@@ -16,7 +16,7 @@ const FeaturedRestaurants = () => {
 
     const fetchRestaurants = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/random");
+        const response = await fetch("/api/random");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

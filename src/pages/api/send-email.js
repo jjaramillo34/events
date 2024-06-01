@@ -2,7 +2,7 @@ import SibApiV3Sdk from "sib-api-v3-sdk";
 
 const defaultClient = SibApiV3Sdk.ApiClient.instance;
 const apiKey = defaultClient.authentications["api-key"];
-apiKey.apiKey = process.env.SIB_API_KEY; // Use environment variable for security
+apiKey.apiKey = process.env.NEXT_PUBLIC_SIB_API_KEY; // Use environment variable for security
 
 const sendEmail = async (req, res) => {
   if (req.method === "POST") {
