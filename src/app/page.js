@@ -8,7 +8,6 @@ import About from "@/components/home/AboutUs";
 import FeaturedRestaurants from "@/components/home/FeaturedRestaurants";
 import Services from "@/components/home/Services";
 import ContactForm from "@/components/home/ContactUs";
-import Dedication from "@/components/home/Dedication";
 
 export default function Home() {
   return (
@@ -18,7 +17,6 @@ export default function Home() {
       <FeaturedRestaurants />
       <About />
       <Services />
-      <Dedication />
       <ContactForm />
       <Footer />
     </div>

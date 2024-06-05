@@ -7,9 +7,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Pagination = ({ page, totalPages }) => {
-  const getPageNumbers = () => {
+  const getPageNumbers = (maxPagesToShow) => {
     const pages = [];
-    const maxPagesToShow = 10;
     let startPage = Math.max(1, page - Math.floor(maxPagesToShow / 2));
     let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
 
@@ -35,20 +34,43 @@ const Pagination = ({ page, totalPages }) => {
           <FontAwesomeIcon icon={faChevronLeft} />
         </Link>
       )}
-      {getPageNumbers().map((pageNumber) => (
-        <Link
-          key={pageNumber}
-          href={`/restaurants/${pageNumber}`}
-          passHref
-          className={`flex items-center border ${
-            pageNumber === page
-              ? "bg-teal-700 text-white"
-              : "bg-white text-teal-600 hover:bg-teal-600 hover:text-white"
-          } py-2 px-3 rounded-full transition duration-300`}
-        >
-          {pageNumber}
-        </Link>
-      ))}
+
+      {/* Mobile view (5 pages) */}
+      <div className="block sm:hidden">
+        {getPageNumbers(5).map((pageNumber) => (
+          <Link
+            key={pageNumber}
+            href={`/restaurants/${pageNumber}`}
+            passHref
+            className={`flex items-center border ${
+              pageNumber === page
+                ? "bg-teal-700 text-white"
+                : "bg-white text-teal-600 hover:bg-teal-600 hover:text-white"
+            } py-2 px-3 rounded-full transition duration-300`}
+          >
+            {pageNumber}
+          </Link>
+        ))}
+      </div>
+
+      {/* Desktop view (10 pages) */}
+      <div className="hidden sm:block">
+        {getPageNumbers(10).map((pageNumber) => (
+          <Link
+            key={pageNumber}
+            href={`/restaurants/${pageNumber}`}
+            passHref
+            className={`flex items-center border ${
+              pageNumber === page
+                ? "bg-teal-700 text-white"
+                : "bg-white text-teal-600 hover:bg-teal-600 hover:text-white"
+            } py-2 px-3 rounded-full transition duration-300`}
+          >
+            {pageNumber}
+          </Link>
+        ))}
+      </div>
+
       {page < totalPages && (
         <Link
           href={`/restaurants/${page + 1}`}

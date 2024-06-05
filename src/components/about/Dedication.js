@@ -8,6 +8,7 @@ import {
   faRocket,
   faPrayingHands,
   faSeedling,
+  faHome,
 } from "@fortawesome/free-solid-svg-icons";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -105,6 +106,23 @@ const Dedication = () => {
             <p>
               I am eternally grateful to my mother, whose wisdom and love have
               shaped me into the person I am today. 🌹
+            </p>
+          </div>
+          <div
+            className="bg-gray-800 p-6 rounded-lg shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div className="flex items-center mb-4">
+              <FontAwesomeIcon
+                icon={faHome}
+                className="text-teal-400 mr-2 text-2xl"
+              />
+              <h3 className="text-xl font-semibold">To My Family</h3>
+            </div>
+            <p>
+              A heartfelt thanks to my entire family for your love, support, and
+              encouragement. You are my home. 🏡
             </p>
           </div>
         </div>
