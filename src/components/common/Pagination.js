@@ -36,7 +36,7 @@ const Pagination = ({ page, totalPages }) => {
       )}
 
       {/* Mobile view (5 pages) */}
-      <div className="block sm:hidden">
+      <div className="flex space-x-2 sm:hidden">
         {getPageNumbers(5).map((pageNumber) => (
           <Link
             key={pageNumber}
@@ -54,7 +54,7 @@ const Pagination = ({ page, totalPages }) => {
       </div>
 
       {/* Desktop view (10 pages) */}
-      <div className="hidden sm:block">
+      <div className="hidden sm:flex space-x-2">
         {getPageNumbers(10).map((pageNumber) => (
           <Link
             key={pageNumber}

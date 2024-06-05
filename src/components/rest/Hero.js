@@ -11,7 +11,6 @@ const Hero = () => {
         <Image
           src="https://img.freepik.com/free-photo/top-view-food-frame-with-copy-space_23-2148724190.jpg"
           alt="Jumbotron Background"
-          layout="fill"
           width={1920}
           height={1080}
           className="w-full h-full object-cover"

@@ -1,13 +1,10 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import MainLayout from "@/components/layouts/MainLayout";
 import RestaurantsList from "@/components/rest/RestaurantList";
 import Hero from "@/components/rest/Hero";
 import NavigationCards from "@/components/rest/NavigationCards";
 import { getBaseUrl } from "../../../../helpers/getBaseUrl";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const fetchRestaurants = async (page) => {
   const baseUrl = getBaseUrl();
