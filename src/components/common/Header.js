@@ -74,7 +74,7 @@ const Navbar = () => {
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >
                 <a
-                  href="/restaurants"
+                  href="/restaurants/1"
                   className="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 md:hover:text-blue-300 md:hover:bg-gray-900 uppercase font-semibold cursor-pointer"
                   onClick={(e) => toggleDropdown(e)}
                 >
