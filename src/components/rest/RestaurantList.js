@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Pagination from "./common/Pagination";
+import Pagination from "../common/Pagination";
 
 const RestaurantsList = ({ restaurants, page, totalPages }) => {
   useEffect(() => {

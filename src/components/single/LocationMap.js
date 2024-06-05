@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect } from "react";
-
 import mapboxgl from "mapbox-gl";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
@@ -10,9 +9,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_API_KEY;
 
 const handleRoute = (type) => {
-  console.log("Getting route for:", type);
   const apiUrl = `https://api.mapbox.com/directions/v5/mapbox/${type}/-122.42,37.78;-77.03,38.91?access_token=${mapboxgl.accessToken}`;
-  console.log("API URL:", apiUrl);
 };
 
 const mapStyle = {

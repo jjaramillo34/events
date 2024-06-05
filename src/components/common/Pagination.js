@@ -10,8 +10,15 @@ const Pagination = ({ page, totalPages }) => {
   const getPageNumbers = () => {
     const pages = [];
     const maxPagesToShow = 10;
-    const endPage = Math.min(totalPages, maxPagesToShow);
-    for (let i = 1; i <= endPage; i++) {
+    let startPage = Math.max(1, page - Math.floor(maxPagesToShow / 2));
+    let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+
+    // Adjust startPage if there are less than maxPagesToShow pages remaining
+    if (endPage - startPage + 1 < maxPagesToShow) {
+      startPage = Math.max(1, endPage - maxPagesToShow + 1);
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
       pages.push(i);
     }
     return pages;
@@ -42,7 +49,7 @@ const Pagination = ({ page, totalPages }) => {
           {pageNumber}
         </Link>
       ))}
-      {totalPages > 10 && page < totalPages && (
+      {page < totalPages && (
         <Link
           href={`/restaurants/${page + 1}`}
           passHref

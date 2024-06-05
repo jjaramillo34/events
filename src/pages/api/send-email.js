@@ -34,7 +34,7 @@ const sendEmail = async (req, res) => {
     try {
       // Send the email
       const data = await apiInstance.sendTransacEmail(sendSmtpEmail);
-      console.log("API called successfully. Returned data: " + data);
+
       res.status(200).json({ message: "Email sent successfully." });
     } catch (error) {
       console.error("Error sending email:", error);

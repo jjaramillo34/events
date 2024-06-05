@@ -1,0 +1,578 @@
+[
+  {
+    "summary": "The Bronx is a vibrant neighborhood located in New York City. It is known for its rich cultural diversity and historic landmarks. The demographics of the Bronx include a mix of different ethnicities, including a large Hispanic population. The neighborhood is also home to a variety of restaurants, shops, and entertainment venues, making it a popular destination for both residents and visitors.",
+    "transportation": {
+      "subway_lines": ["1", "2", "4", "5", "6"],
+      "bus_lines": ["Bx1", "Bx2", "Bx12", "Bx41"],
+      "walkability": "The Bronx is a walkable neighborhood with plenty of sidewalks and pedestrian-friendly streets. Residents can easily walk to nearby amenities such as grocery stores, restaurants, and parks.",
+      "bikes_paths": "The Bronx has a growing network of bike paths and lanes, making it easy for cyclists to navigate the neighborhood. Biking is a popular mode of transportation in the Bronx, with many residents opting to bike to work or leisure activities."
+    },
+    "borough": "Bronx",
+    "borough_slug": "bronx",
+    "photos": [
+      {
+        "title": "New York Skyline From Bronx By Dave Beckerman | ubicaciondepersonas ...",
+        "image": "https://api.time.com/wp-content/uploads/2016/07/160729-south-bronx-1970s-03.jpg",
+        "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.wQ-xV4R2dXWm44E069Ne8wHaE3&pid=Api",
+        "url": "https://ubicaciondepersonas.cdmx.gob.mx/new-york-skyline-from-bronx-by-dave-beckerman-ee-23023491",
+        "height": 1680,
+        "width": 2560,
+        "source": "Bing"
+      },
+      {
+        "title": "New York City 70s at DuckDuckGo | Bronx nyc, The bronx new york, Bronx",
+        "image": "https://i.pinimg.com/originals/f6/be/84/f6be84b6384f19e5e7b490422a2dc09f.png",
+        "thumbnail": "https://tse3.mm.bing.net/th?id=OIP.wN7sgI2QknEUf6AZ4N_TuAHaE7&pid=Api",
+        "url": "https://www.pinterest.com/pin/168392473554829422/",
+        "height": 666,
+        "width": 1000,
+        "source": "Bing"
+      },
+      {
+        "title": "The Bronx Wallpapers - Wallpaper Cave",
+        "image": "https://wallpapercave.com/wp/wp6681556.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.9sFaS-wzKiTuwDfqRHqidgHaEK&pid=Api",
+        "url": "https://wallpapercave.com/the-bronx-wallpapers",
+        "height": 1080,
+        "width": 1920,
+        "source": "Bing"
+      },
+      {
+        "title": "Bronx, 1980 | 1980's in 2019 | New york city, Nyc, New york pictures",
+        "image": "https://i.pinimg.com/originals/d9/68/bd/d968bd08982d78b2ce51f38d705ba82d.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.z5lMluId7VfdZ9jqGGDOTgHaFm&pid=Api",
+        "url": "https://www.pinterest.com.mx/pin/471963235929245185/",
+        "height": 727,
+        "width": 960,
+        "source": "Bing"
+      },
+      {
+        "title": "Photograph shows Helen Becker's home in the Bronx, New York City, at ...",
+        "image": "https://i.pinimg.com/736x/e1/ae/74/e1ae7488e9c19490550fd46be4a29f2b--the-bronx-new-york-lieutenant.jpg",
+        "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.sK7g4PeRkRXLdaCFKzG9cADNEs&pid=Api",
+        "url": "https://www.pinterest.com/pin/photograph-shows-helen-beckers-home-in-the-bronx-new-york-city-at-2291-university-avenue--546342998526276284/",
+        "height": 1024,
+        "width": 703,
+        "source": "Bing"
+      },
+      {
+        "title": "The Bronx Wallpapers - Wallpaper Cave",
+        "image": "https://wallpapercave.com/wp/wp6681710.jpg",
+        "thumbnail": "https://tse3.mm.bing.net/th?id=OIP.cHcy1KI_mpXRi7-IgHdXqAHaEi&pid=Api",
+        "url": "https://wallpapercave.com/the-bronx-wallpapers",
+        "height": 932,
+        "width": 1520,
+        "source": "Bing"
+      },
+      {
+        "title": "Bronx House, New York City Pictures, New York Neighborhoods, Bronx Nyc ...",
+        "image": "https://i.pinimg.com/originals/80/d6/ac/80d6aca572e6f9242a13638fed4a3d25.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.JGCNUewMO1DSqUuCo0VjwQHaJl&pid=Api",
+        "url": "https://www.pinterest.com/pin/515451119830804940/",
+        "height": 960,
+        "width": 742,
+        "source": "Bing"
+      },
+      {
+        "title": "The Bronx, New York, NY Stock Photo - Alamy",
+        "image": "https://c8.alamy.com/comp/R3R9JY/the-bronx-new-york-ny-R3R9JY.jpg",
+        "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.9DAlgv8dwuxRLqMp-8myLwHaL4&pid=Api",
+        "url": "https://www.alamy.com/the-bronx-new-york-ny-image226091235.html",
+        "height": 1390,
+        "width": 866,
+        "source": "Bing"
+      },
+      {
+        "title": "Aerial view of a baseball stadium, Yankee Stadium, The Bronx, New York ...",
+        "image": "https://previews.agefotostock.com/previewimage/medibigoff/aeb7490a64c6a1c1e961ac78e8c9f533/ssb-255-8987.jpg",
+        "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.5B-3PekO2mtN-HQGfW5fagHaF3&pid=Api",
+        "url": "https://www.agefotostock.com/age/en/details-photo/aerial-view-of-a-baseball-stadium-yankee-stadium-the-bronx-new-york-city-new-york-state-new-york-usa/SSB-255-8987",
+        "height": 832,
+        "width": 1050,
+        "source": "Bing"
+      },
+      {
+        "title": "South Bronx, New York City during the 1920's. The Bronx New York, Bronx ...",
+        "image": "https://i.pinimg.com/originals/87/48/4a/87484a66453c13239bac3348f74da11e.png",
+        "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.BKnmRzBLz9O_IkPzQ6bpmwHaEo&pid=Api",
+        "url": "https://www.pinterest.fr/pin/312578030359223700/",
+        "height": 305,
+        "width": 488,
+        "source": "Bing"
+      }
+    ],
+    "demographics": "The Bronx is a diverse neighborhood with a large Hispanic population. The neighborhood also has significant African American and Caucasian communities. The Bronx is known for its cultural diversity and vibrant mix of traditions.",
+    "places": "The Bronx is home to a variety of attractions, including the Bronx Zoo, Yankee Stadium, and the New York Botanical Garden. Residents and visitors can also enjoy shopping and dining at the many local businesses in the neighborhood."
+  },
+  {
+    "summary": "Brooklyn is a vibrant and diverse neighborhood located in New York City. Known for its rich history, cultural diversity, and thriving arts scene, Brooklyn is a popular destination for residents and tourists alike. The neighborhood is home to a diverse population, with a mix of young professionals, families, and artists. Brooklyn offers a wide range of dining options, shopping opportunities, and entertainment venues, making it a dynamic and exciting place to live or visit.",
+    "transportation": {
+      "subway_lines": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "A",
+        "C",
+        "G",
+        "L",
+        "N",
+        "Q",
+        "R"
+      ],
+      "bus_lines": ["B41", "B61", "B63", "B67", "B68", "B69", "B103"],
+      "walkability": "Brooklyn is known for its pedestrian-friendly streets, with many sidewalks and crosswalks. Walking is a popular mode of transportation in the neighborhood, as residents and visitors can easily access shops, restaurants, and parks on foot."
+    },
+    "borough": "Brooklyn",
+    "borough_slug": "brooklyn",
+    "photos": [
+      {
+        "title": "Kostenloses Foto: New York, Nyc, Brooklyn - Kostenloses Bild auf ...",
+        "image": "https://cdn.pixabay.com/photo/2016/01/27/08/11/new-york-1163826_1280.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.INbEvI1Iwvay6JbnsIXGQgAAAA&pid=Api",
+        "url": "https://pixabay.com/de/new-york-nyc-brooklyn-new-york-city-1163826/",
+        "height": 315,
+        "width": 474,
+        "source": "Bing"
+      },
+      {
+        "title": "brooklyn bridge, bridge, buildings, sky, hd, 4k, 5k, 8k HD Wallpaper",
+        "image": "https://wallpapercrafter.com/desktop/161402-city-clouds-water-monochrome-bridge-cityscape-Brooklyn-Bridge-skyline-New-York-City.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.FCPrhu6E7cZMZOePQjwqjwHaE7&pid=Api",
+        "url": "https://wallpapercrafter.com/52874-brooklyn-bridge-bridge-buildings-sky-hd-4k-5k-8k.html",
+        "height": 3953,
+        "width": 5931,
+        "source": "Bing"
+      },
+      {
+        "title": "BROOKLYN/NEW YORK CITY / NEW YORK /USA/09.JUNE 2018 Manhatten view from ...",
+        "image": "https://c8.alamy.com/comp/2G60T8B/brooklynnew-york-city-new-york-usa09june-2018-manhatten-view-from-from-my-hotel-room-window-from-brooklyn-new-york-ny-usa-photofranc-2G60T8B.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.adR-A_nmRyQJghJ2EgaDywHaFc&pid=Api",
+        "url": "https://www.alamy.com/brooklynnew-york-city-new-york-usa09june-2018-manhatten-view-from-from-my-hotel-room-window-from-brooklyn-new-york-ny-usa-photofranc-image433966187.html",
+        "height": 956,
+        "width": 1300,
+        "source": "Bing"
+      },
+      {
+        "title": "The Iconic Manhattan Bridge in Brooklyn, New York City, USA Stock Image ...",
+        "image": "https://thumbs.dreamstime.com/b/iconic-manhattan-bridge-brooklyn-new-york-city-usa-iconic-manhattan-bridge-connect-dumbo-brooklyn-to-manhattan-new-143423221.jpg",
+        "thumbnail": "https://tse3.mm.bing.net/th?id=OIP.pj3tyVdcHr9P1z7g63_zaQHaE7&pid=Api",
+        "url": "https://www.dreamstime.com/iconic-manhattan-bridge-brooklyn-new-york-city-usa-iconic-manhattan-bridge-connect-dumbo-brooklyn-to-manhattan-new-image143423221",
+        "height": 533,
+        "width": 800,
+        "source": "Bing"
+      },
+      {
+        "title": "1920x1080 resolution | Brooklyn Bridge, New York, New York City, bridge ...",
+        "image": "https://www.wallpaperflare.com/static/899/863/728/new-york-city-bridge-monochrome-brooklyn-wallpaper.jpg",
+        "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.v7Cv3hFOLOX1rk51Pb3J6QHaF7&pid=Api",
+        "url": "https://www.wallpaperflare.com/brooklyn-bridge-new-york-new-york-city-bridge-monochrome-wallpaper-270762/1920x1080",
+        "height": 1200,
+        "width": 1500,
+        "source": "Bing"
+      },
+      {
+        "title": "brooklyn, new york, new york city, city, selfie, travel, architecture ...",
+        "image": "https://p0.pikist.com/photos/207/304/brooklyn-new-york-new-york-city-city-selfie-travel-architecture-bridge-usa.jpg",
+        "thumbnail": "https://tse3.mm.bing.net/th?id=OIP.8YOp9R6KJcMTXkLQtIVsYgHaLK&pid=Api",
+        "url": "https://www.pikist.com/free-photo-vafez",
+        "height": 1327,
+        "width": 880,
+        "source": "Bing"
+      },
+      {
+        "title": "Brooklyn Bridge in New York City. Stock Image - Image of cityscape ...",
+        "image": "https://thumbs.dreamstime.com/b/brooklyn-bridge-new-york-city-dusk-viewed-park-68362433.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.VRm-C_0H1EpLuVy5r7yCUQHaE7&pid=Api",
+        "url": "https://www.dreamstime.com/stock-photo-brooklyn-bridge-new-york-city-dusk-viewed-park-image68362433",
+        "height": 533,
+        "width": 800,
+        "source": "Bing"
+      },
+      {
+        "title": "new york, brooklyn, bridge, usa, 4k HD Wallpaper",
+        "image": "https://wallpapercrafter.com/desktop/120042-cityscape-Brooklyn-Bridge-monochrome-USA-New-York-City.jpg",
+        "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.GijiNNnedrDnwXa570LVrgHaE8&pid=Api",
+        "url": "https://wallpapercrafter.com/23011-new-york-brooklyn-bridge-usa-4k.html",
+        "height": 1707,
+        "width": 2560,
+        "source": "Bing"
+      },
+      {
+        "title": "Brooklyn Bridge And New York City Stock Photo - Download Image Now ...",
+        "image": "https://media.istockphoto.com/id/123843547/photo/brooklyn-bridge-and-new-york-city.jpg?s=170667a&w=0&k=20&c=lZ9XWI7k1FSk06uzWX8KWldNU_uJ8kP7mHHUoI7Pc_c=",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.SBPZUTbKDJaue8A8mFBqQAAAAA&pid=Api",
+        "url": "https://www.istockphoto.com/photo/brooklyn-bridge-and-new-york-city-gm123843547-9314379",
+        "height": 370,
+        "width": 463,
+        "source": "Bing"
+      },
+      {
+        "title": "Manhattan Bridge photographed from Brooklyn, New York City, United ...",
+        "image": "https://c8.alamy.com/comp/R3MB8C/manhattan-bridge-photographed-from-brooklyn-new-york-city-united-states-of-america-R3MB8C.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.3cLk7walgq3JjhqGZ7hE4gHaL4&pid=Api",
+        "url": "https://www.alamy.com/manhattan-bridge-photographed-from-brooklyn-new-york-city-united-states-of-america-image226026652.html",
+        "height": 1390,
+        "width": 866,
+        "source": "Bing"
+      }
+    ],
+    "demographics": "Brooklyn is a vibrant and diverse neighborhood located in New York City. Known for its rich history, cultural diversity, and thriving arts scene, Brooklyn is a popular destination for residents and tourists alike. The neighborhood is home to a diverse population, with a mix of young professionals, families, and artists. Brooklyn offers a wide range of dining options, shopping opportunities, and entertainment venues, making it a dynamic and exciting place to live or visit.",
+    "places": "Brooklyn is full of exciting places to explore, from iconic landmarks like the Brooklyn Bridge and Prospect Park, to trendy neighborhoods like Williamsburg and DUMBO. The neighborhood is home to a wide variety of restaurants, bars, and shops, offering something for everyone. Brooklyn also has a thriving arts scene, with galleries, theaters, and performance spaces showcasing local talent and international artists."
+  },
+  {
+    "summary": "Manhattan is one of the most iconic neighborhoods in New York City, known for its vibrant culture, diverse demographics, and endless entertainment options. The neighborhood is home to a mix of residents from all walks of life, including young professionals, families, and students. With its bustling streets filled with shops, restaurants, and landmarks, Manhattan offers a unique blend of history and modernity. Visitors can explore iconic sites such as Central Park, Times Square, and the Empire State Building, or simply enjoy a leisurely stroll along the scenic Hudson River. With its world-class museums, theaters, and art galleries, Manhattan is a cultural hub that never fails to impress. Whether you're looking for a cozy cafe to relax in or a lively nightclub to dance the night away, Manhattan has something for everyone.",
+    "transportation": {
+      "subway_lines": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "A",
+        "C",
+        "E",
+        "B",
+        "D",
+        "F",
+        "M",
+        "N",
+        "Q",
+        "R",
+        "W",
+        "J",
+        "Z",
+        "7"
+      ],
+      "bus_lines": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M7",
+        "M8",
+        "M9",
+        "M10",
+        "M11",
+        "M14",
+        "M15",
+        "M20",
+        "M34",
+        "M60",
+        "M79"
+      ],
+      "walkability": "Manhattan is known for its pedestrian-friendly streets, with wide sidewalks and convenient crosswalks. Many residents choose to walk or bike to get around the neighborhood, taking advantage of the numerous parks and green spaces scattered throughout the area.",
+      "bikes_paths": "Manhattan offers a range of bike paths and lanes for cyclists to explore the neighborhood at their own pace. From scenic routes along the Hudson River to dedicated bike lanes on major streets, cyclists can enjoy a safe and enjoyable ride through Manhattan's bustling streets."
+    },
+    "borough": "Manhattan",
+    "borough_slug": "manhattan",
+    "photos": [
+      {
+        "title": "Aerial view of Midtown Manhattan, New York City, New York, USA Stock ...",
+        "image": "https://c8.alamy.com/comp/2FN5E2H/aerial-view-of-midtown-manhattan-new-york-city-new-york-usa-2FN5E2H.jpg",
+        "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.tfsxJuEXIq8ZND4DHyzNvQHaH6&pid=Api",
+        "url": "https://www.alamy.com/aerial-view-of-midtown-manhattan-new-york-city-new-york-usa-image426077417.html",
+        "height": 1390,
+        "width": 1300,
+        "source": "Bing"
+      },
+      {
+        "title": "Free Images : horizon, black and white, bridge, skyline, night, city ...",
+        "image": "https://c.pxhere.com/photos/87/0e/new_york_nyc_brooklyn_new_york_city_city_manhattan_new_york_city_skyline_new_york_skyline-1322866.jpg!d",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.M_OMycaWB1DEXso8ChBSuQHaE7&pid=Api",
+        "url": "https://pxhere.com/en/photo/98956",
+        "height": 799,
+        "width": 1200,
+        "source": "Bing"
+      },
+      {
+        "title": "new york, architecture, city, skyscraper, new York City, manhattan ...",
+        "image": "https://p1.pxfuel.com/preview/517/918/430/new-york-architecture-new-york-city-city.jpg",
+        "thumbnail": "https://tse3.mm.bing.net/th?id=OIP.uxLoCYjF5Wb0p_wl4N_UvQHaLJ&pid=Api",
+        "url": "https://www.pxfuel.com/en/free-photo-jlxok",
+        "height": 1370,
+        "width": 910,
+        "source": "Bing"
+      },
+      {
+        "title": "Empire State Building (One World Trade Center behind), Manhattan, New ...",
+        "image": "https://c8.alamy.com/comp/W2CHH0/empire-state-building-one-world-trade-center-behind-manhattan-new-york-city-new-york-usa-W2CHH0.jpg",
+        "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.Hg2cLVm_1T6SmHArQgfXzQHaL4&pid=Api",
+        "url": "https://www.alamy.com/empire-state-building-one-world-trade-center-behind-manhattan-new-york-city-new-york-usa-image259662060.html",
+        "height": 1390,
+        "width": 866,
+        "source": "Bing"
+      },
+      {
+        "title": "Panoramic View of Lower Manhattan, New York City, USA Stock Image ...",
+        "image": "https://thumbs.dreamstime.com/b/panoramic-view-lower-manhattan-new-york-city-usa-black-white-171330331.jpg",
+        "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.xZOpbRp-2UGYepKF0UwaxAHaDd&pid=Api",
+        "url": "https://www.dreamstime.com/panoramic-view-lower-manhattan-new-york-city-usa-black-white-image171330331",
+        "height": 747,
+        "width": 1600,
+        "source": "Bing"
+      },
+      {
+        "title": "Empire State Building & Manhattan, New York City, New York, USA Stock ...",
+        "image": "https://c8.alamy.com/comp/W2CHXP/empire-state-building-manhattan-new-york-city-new-york-usa-W2CHXP.jpg",
+        "thumbnail": "https://tse3.mm.bing.net/th?id=OIP.NeX3jwNOqp6OJ_wJGTDl7AHaH6&pid=Api",
+        "url": "https://www.alamy.com/empire-state-building-manhattan-new-york-city-new-york-usa-image259662334.html",
+        "height": 1390,
+        "width": 1300,
+        "source": "Bing"
+      },
+      {
+        "title": "Streets of Manhattan. New York City Skyline from a Lower Viewpoint ...",
+        "image": "https://thumbs.dreamstime.com/b/streets-manhattan-new-york-city-skyline-lower-viewpoint-205390876.jpg",
+        "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.ZZdNVnp9lo-PYgWi1_HSbwHaIV&pid=Api",
+        "url": "https://www.dreamstime.com/streets-manhattan-new-york-city-skyline-lower-viewpoint-image205390876",
+        "height": 900,
+        "width": 800,
+        "source": "Bing"
+      },
+      {
+        "title": "View of Buildings in Midtown Manhattan, New York City Editorial ...",
+        "image": "https://thumbs.dreamstime.com/b/view-buildings-midtown-manhattan-new-york-city-147179622.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.PRpAbyf93BEbH9_qsKr3bgHaLF&pid=Api",
+        "url": "https://www.dreamstime.com/view-buildings-midtown-manhattan-new-york-city-image147179622",
+        "height": 900,
+        "width": 601,
+        "source": "Bing"
+      },
+      {
+        "title": "View from the Empire State Building, Manhattan, New York City, New York ...",
+        "image": "https://c8.alamy.com/comp/E858G9/view-from-the-empire-state-building-manhattan-new-york-city-new-york-E858G9.jpg",
+        "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.UXndBicU5ilY_sMdOFrurAHaFc&pid=Api",
+        "url": "https://www.alamy.com/stock-photo-view-from-the-empire-state-building-manhattan-new-york-city-new-york-73875209.html",
+        "height": 957,
+        "width": 1300,
+        "source": "Bing"
+      },
+      {
+        "title": "View of Manhattan, New York City Editorial Stock Image - Image of ...",
+        "image": "https://thumbs.dreamstime.com/b/view-manhattan-new-york-city-usa-114656504.jpg",
+        "thumbnail": "https://tse3.mm.bing.net/th?id=OIP.MUNZLJ7NABnQWTSOeiXJJQHaEU&pid=Api",
+        "url": "https://www.dreamstime.com/view-manhattan-new-york-city-usa-image114656504",
+        "height": 466,
+        "width": 800,
+        "source": "Bing"
+      }
+    ],
+    "demographics": "Manhattan is a melting pot of cultures, with residents hailing from all over the world. The neighborhood is known for its vibrant and diverse population, with a mix of young professionals, families, and students. The median age in Manhattan is around 36 years old, with a fairly even split between males and females. The majority of residents are employed in a variety of industries, including finance, technology, and the arts.",
+    "places": "Manhattan is filled with a variety of attractions and landmarks for residents and visitors to explore. From world-famous museums like the Metropolitan Museum of Art and the Museum of Modern Art, to iconic landmarks like Times Square and Central Park, there is no shortage of things to see and do in Manhattan. The neighborhood is also home to a wide range of restaurants, cafes, and bars, offering a diverse array of dining options to suit every taste. Whether you're in the mood for a casual meal with friends or a fine dining experience, Manhattan has something for everyone."
+  },
+  {
+    "summary": "Queens is the easternmost and largest borough of New York City, known for its diverse population, cultural attractions, and vibrant neighborhoods. With a population of over 2.3 million residents, Queens is one of the most ethnically diverse urban areas in the world, with a mix of residents from all over the globe. The neighborhoods in Queens offer a mix of residential and commercial areas, with a wide range of housing options from single-family homes to high-rise apartment buildings. Queens is also home to a number of cultural institutions, parks, and recreational facilities, making it a popular destination for residents and visitors alike.",
+    "transportation": {
+      "subway_lines": ["7", "E", "F", "M", "R"],
+      "bus_lines": ["Q32", "Q46", "Q60", "Q65", "Q70"],
+      "walkability": "Queens is a relatively walkable borough, with many neighborhoods offering a mix of residential and commercial areas within walking distance. Sidewalks and pedestrian-friendly streets make it easy to get around on foot in many parts of Queens.",
+      "bikes_paths": "Queens offers a growing network of bike paths and lanes, making it easier for residents to bike around the borough. The Queens Greenway is a popular bike route that connects parks and neighborhoods across the borough, providing a scenic and safe way to explore Queens by bike."
+    },
+    "borough": "Queens",
+    "borough_slug": "queens",
+    "photos": [
+      {
+        "title": "USA New York City Queens Panorama der Stadt New York - das Queens ...",
+        "image": "https://l450v.alamy.com/450vde/e8fkcd/usa-new-york-state-new-york-city-queens-plaza-e8fkcd.jpg",
+        "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.jHSnoBE1qD8EcVCWOrbidgAAAA&pid=Api",
+        "url": "https://www.alamy.de/stockfoto-usa-new-york-city-queens-panorama-der-stadt-new-york-das-queens-museum-of-art-47504980.html",
+        "height": 319,
+        "width": 450,
+        "source": "Bing"
+      },
+      {
+        "title": "Fisheye Evening View Of Manhattan East Towards East River And Queens ...",
+        "image": "https://images.fineartamerica.com/images-medium-large-5/fisheye-evening-view-of-manhattan-east-towards-east-river-and-queens-new-york-city-joe-fox.jpg",
+        "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.ZOmzOlPrykfKhrPtlJAtMgHaE8&pid=Api",
+        "url": "https://fineartamerica.com/featured/fisheye-evening-view-of-manhattan-east-towards-east-river-and-queens-new-york-city-joe-fox.html",
+        "height": 600,
+        "width": 900,
+        "source": "Bing"
+      },
+      {
+        "title": "view of manhattan north east towards east river and Queens new york ...",
+        "image": "https://images.fineartamerica.com/images-medium-large-5/view-of-manhattan-north-east-towards-east-river-and-queens-new-york-city-usa-joe-fox.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.sem181aElzCRSmDnfCk2dAHaE8&pid=Api",
+        "url": "https://fineartamerica.com/featured/view-of-manhattan-north-east-towards-east-river-and-queens-new-york-city-usa-joe-fox.html",
+        "height": 600,
+        "width": 900,
+        "source": "Bing"
+      },
+      {
+        "title": "New york queens street hi-res stock photography and images - Alamy",
+        "image": "https://c8.alamy.com/comp/G6CGA6/1950s-main-street-flushing-long-island-queens-store-fronts-bus-shoppers-G6CGA6.jpg",
+        "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.kIyweLYhvC4FlR07UobT6QHaGb&pid=Api",
+        "url": "https://www.alamy.com/stock-photo/new-york-queens-street.html",
+        "height": 1129,
+        "width": 1300,
+        "source": "Bing"
+      },
+      {
+        "title": "Evening View Of Manhattan East Towards East River And Queens New York ...",
+        "image": "https://images.fineartamerica.com/images-medium-large-5/evening-view-of-manhattan-east-towards-east-river-and-queens-new-york-city-usa-joe-fox.jpg",
+        "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.gDbPGj8ss-lnxr3zWCSGqgHaLH&pid=Api",
+        "url": "https://fineartamerica.com/featured/evening-view-of-manhattan-east-towards-east-river-and-queens-new-york-city-usa-joe-fox.html",
+        "height": 900,
+        "width": 600,
+        "source": "Bing"
+      },
+      {
+        "title": "Evening View Of Manhattan East Towards East River And Queens New York ...",
+        "image": "https://images.fineartamerica.com/images-medium-large-5/evening-view-of-manhattan-east-towards-east-river-and-queens-new-york-city-cityscape-usa-joe-fox.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.fk8LmkWfiltjqYRWJNlyYgHaE8&pid=Api",
+        "url": "https://fineartamerica.com/featured/evening-view-of-manhattan-east-towards-east-river-and-queens-new-york-city-cityscape-usa-joe-fox.html",
+        "height": 600,
+        "width": 900,
+        "source": "Bing"
+      },
+      {
+        "title": "Queens Ny Skyline Stock-Fotos und Bilder - Getty Images",
+        "image": "https://media.gettyimages.com/id/530826180/de/foto/skyline-von-new-york-city.jpg?s=612x612&w=gi&k=20&c=nQG_MB7Nz24NuI3BQGkJF_iJUGSOvT7OkH-k53BIFP8=",
+        "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.ihzuZcAYyguYfFu1-SFDvQHaE8&pid=Api",
+        "url": "https://www.gettyimages.ch/fotos/queens-ny-skyline",
+        "height": 408,
+        "width": 612,
+        "source": "Bing"
+      },
+      {
+        "title": "The Unisphere in Queens Cloud Gate, Metropolitan, New York City, Queens ...",
+        "image": "https://i.pinimg.com/originals/fb/54/8e/fb548e0145a2dd4b3825f56a572a5650.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.hBY58LSBbJ1IBnoy0Uej2AHaIm&pid=Api",
+        "url": "https://www.pinterest.com/pin/19632948348042926/",
+        "height": 640,
+        "width": 551,
+        "source": "Bing"
+      },
+      {
+        "title": "Street scene from above of 39th Pl at Queens Blvd in Sunnyside, Queens ...",
+        "image": "https://c8.alamy.com/comp/S37HN8/street-scene-from-above-of-39th-pl-at-queens-blvd-in-sunnyside-queens-new-york-city-S37HN8.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.aOWDPIXIi_ErsanklgtEAAHaKj&pid=Api",
+        "url": "https://www.alamy.com/street-scene-from-above-of-39th-pl-at-queens-blvd-in-sunnyside-queens-new-york-city-image311798180.html",
+        "height": 1390,
+        "width": 975,
+        "source": "Bing"
+      },
+      {
+        "title": "Ideia Nevoenta Da Skyline De Manhattan Do Parque Estadual Da Plaza Do P ...",
+        "image": "https://thumbs.dreamstime.com/b/ideia-nevoenta-da-skyline-de-manhattan-do-parque-estadual-plaza-p-rtico-na-cidade-long-island-queens-new-york-city-147436036.jpg",
+        "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.CdanJui18iEA3usFyuGRewHaE7&pid=Api",
+        "url": "https://pt.dreamstime.com/ideia-nevoenta-da-skyline-de-manhattan-do-parque-estadual-plaza-p-rtico-na-cidade-long-island-queens-new-york-city-image147436036",
+        "height": 533,
+        "width": 800,
+        "source": "Bing"
+      }
+    ],
+    "demographics": "Queens is known for its diverse population, with residents from a wide range of ethnic and cultural backgrounds. The borough is home to large communities of immigrants, including people from Latin America, Asia, Africa, and Europe. Queens is also known for its vibrant LGBTQ community, with a number of LGBTQ-friendly neighborhoods and businesses throughout the borough.",
+    "places": "Queens is home to a number of cultural attractions, including the Queens Museum, MoMA PS1, and Flushing Meadows Corona Park. The borough also boasts a wide range of dining, shopping, and entertainment options, with neighborhoods like Astoria, Flushing, and Jackson Heights offering diverse culinary scenes and vibrant nightlife. Queens is also known for its natural beauty, with parks like Forest Park, Flushing Meadows Corona Park, and Rockaway Beach providing residents with outdoor recreational opportunities."
+  },
+  {
+    "summary": "Staten Island is the southernmost of New York City's five boroughs, known for its suburban feel and family-friendly atmosphere. The neighborhood is home to a diverse population, with a mix of ethnicities and cultures. Staten Island boasts a variety of parks, restaurants, and shopping centers, making it a desirable place to live for both young professionals and families. The neighborhood is also known for its historic sites, including the Staten Island Museum and the Staten Island Zoo.",
+    "transportation": {
+      "subway_lines": [],
+      "bus_lines": ["S53", "S79", "S78"],
+      "walkability": "Staten Island offers a mix of walkable areas, with some neighborhoods being more pedestrian-friendly than others. Sidewalks are well-maintained, making it easy to walk to nearby amenities.",
+      "bikes_paths": "Staten Island has a number of bike paths and trails that wind through parks and along the waterfront, providing cyclists with a scenic and safe way to get around the neighborhood."
+    },
+    "borough": "Staten Island",
+    "borough_slug": "staten-island",
+    "photos": [
+      {
+        "title": "Staten Island New York Skyline - Free photo on Pixabay - Pixabay",
+        "image": "https://cdn.pixabay.com/photo/2013/12/07/01/33/staten-island-224385_1280.jpg",
+        "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.lb2CB-zsbiHf5RqiRwg46AHaE6&pid=Api",
+        "url": "https://pixabay.com/photos/staten-island-new-york-skyline-224385/",
+        "height": 848,
+        "width": 1280,
+        "source": "Bing"
+      },
+      {
+        "title": "Staten Island Landscape Photos and Premium High Res Pictures - Getty Images",
+        "image": "https://media.gettyimages.com/id/97647331/photo/new-york-city-landscape.jpg?s=612x612&w=gi&k=20&c=iN-sgrU8IutdzraFrF9Qyd6tTZ7gB0jCQi0BMNq1tnM=",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.ztTrJ69a4X_zDb93kUMlXwHaE8&pid=Api",
+        "url": "https://www.gettyimages.dk/photos/staten-island-landscape",
+        "height": 408,
+        "width": 612,
+        "source": "Bing"
+      },
+      {
+        "title": "City Island New York City Photos and Premium High Res Pictures - Getty ...",
+        "image": "https://media.gettyimages.com/id/3231305/photo/view-of-the-waterfront-at-the-southern-tip-of-manhattan-showing-docks-where-the-staten-island.jpg?s=612x612&w=gi&k=20&c=Yo8jV1zkakAjt03Vcszm8H6SkgOC6U-tnvkuj-bZZCY=",
+        "thumbnail": "https://tse3.mm.bing.net/th?id=OIP.xA2Re1U4sfc7IyYa0mkcYQHaF5&pid=Api",
+        "url": "https://www.gettyimages.in/photos/city-island-new-york-city",
+        "height": 487,
+        "width": 612,
+        "source": "Bing"
+      },
+      {
+        "title": "Staten island attractions hi-res stock photography and images - Alamy",
+        "image": "https://c8.alamy.com/comp/AFKWK6/staten-island-new-york-city-AFKWK6.jpg",
+        "thumbnail": "https://tse3.mm.bing.net/th?id=OIP.QQ6eaKgk1Rxhu5_IEVgi8wHaFc&pid=Api",
+        "url": "https://www.alamy.com/stock-photo/staten-island-attractions.html",
+        "height": 955,
+        "width": 1300,
+        "source": "Bing"
+      },
+      {
+        "title": "Staten Island Range Lighthouse, New York at Lighthousefriends.com",
+        "image": "https://lighthousefriends.com/statenisland_cg.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.MITj2jhMV-kIr1Yc8ViDhgHaI0&pid=Api",
+        "url": "https://lighthousefriends.com/light.asp?ID=584",
+        "height": 600,
+        "width": 504,
+        "source": "Bing"
+      },
+      {
+        "title": "NYC in the 1960s: See striking photos from another era in New York City ...",
+        "image": "https://i.pinimg.com/originals/f9/37/79/f937796c75be638c420fa281f05d0462.jpg",
+        "thumbnail": "https://tse3.mm.bing.net/th?id=OIP.ub4cTcA4Ezi5XRv1gwmG6gHaGA&pid=Api",
+        "url": "https://www.pinterest.jp/pin/796926096536014088/",
+        "height": 640,
+        "width": 788,
+        "source": "Bing"
+      },
+      {
+        "title": ".Panoramic View of Lower Manhattan and Jersey City from Staten Island ...",
+        "image": "https://thumbs.dreamstime.com/b/panoramic-view-lower-manhattan-jersey-city-staten-island-new-york-usa-black-white-image-137260260.jpg",
+        "thumbnail": "https://tse4.mm.bing.net/th?id=OIP.q--aNmSdf6ZvNSckO7YMcwHaB7&pid=Api",
+        "url": "https://www.dreamstime.com/panoramic-view-lower-manhattan-jersey-city-staten-island-new-york-usa-black-white-image-image137260260",
+        "height": 208,
+        "width": 800,
+        "source": "Bing"
+      },
+      {
+        "title": "Then and now: Photographic flashback to 1940s Staten Island - silive.com",
+        "image": "https://www.silive.com/resizer/CXh8ienUDNOcSEmAAlkx0Tx_Cg0=/700x0/smart/advancelocal-adapter-image-uploads.s3.amazonaws.com/expo.advance.net/img/6332d82878/width2048/159_screenshot20181116at25933pm.jpeg",
+        "thumbnail": "https://tse2.mm.bing.net/th?id=OIP.btsBlEFQM0bCFv37UN-wPwHaJE&pid=Api",
+        "url": "https://www.silive.com/news/erry-2018/11/450f318b4d878/a-flashback-to-staten-island-i.html",
+        "height": 857,
+        "width": 700,
+        "source": "Bing"
+      },
+      {
+        "title": "New Dorp Lane, S.I. | Staten island history, New york pictures, Staten ...",
+        "image": "https://i.pinimg.com/originals/4f/f8/1b/4ff81b097c9afadfc3323897c6494e7e.jpg",
+        "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.bYCn5u7tOQDVtya4JSF35AHaF6&pid=Api",
+        "url": "https://www.pinterest.nz/pin/491314640582758185/",
+        "height": 600,
+        "width": 752,
+        "source": "Bing"
+      },
+      {
+        "title": "Aerial View of Staten Island from balloon - 1906",
+        "image": "http://www.geographicguide.com/united-states/nyc/antique/staten-island/images/staten-island-new-york.jpg",
+        "thumbnail": "https://tse1.mm.bing.net/th?id=OIP.JOCNwmJC-dOryq7eWYfmpQHaFD&pid=Api",
+        "url": "http://www.geographicguide.com/united-states/nyc/antique/staten-island/aerial.htm",
+        "height": 1366,
+        "width": 2000,
+        "source": "Bing"
+      }
+    ],
+    "demographics": "Staten Island is a diverse neighborhood, with a mix of ethnicities and cultures. The population is predominantly Caucasian, with a growing Hispanic and Asian population. The neighborhood has a mix of young professionals, families, and retirees, making it a vibrant and welcoming community.",
+    "places": "Staten Island has a variety of parks, restaurants, and shopping centers for residents to enjoy. Some popular attractions include the Staten Island Mall, Snug Harbor Cultural Center, and the Historic Richmond Town. Residents can also explore the neighborhood's historic sites, including the Staten Island Museum and the Staten Island Zoo."
+  }
+]

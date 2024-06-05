@@ -42,8 +42,6 @@ const ContactForm = () => {
 
     setFormStatus("loading");
 
-    console.log("Sending email:", formData);
-
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
@@ -56,7 +54,7 @@ const ContactForm = () => {
       }
 
       const data = await response.json();
-      console.log("Success:", data);
+
       setName("");
       setEmail("");
       setMessage("");

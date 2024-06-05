@@ -28,7 +28,8 @@ export default function handler(req, res) {
     if (!filteredNeighData.length) {
       return res.status(404).json({ error: "Neighborhood not found" });
     }
-
+    const name = filteredNeighData[0].neighborhood;
+    const neighborhood_slug = filteredNeighData[0].neighborhood_slug;
     const summary = filteredNeighData[0].summary;
     const transportation = filteredNeighData[0].transportation;
     const photos = filteredNeighData[0].photos;
@@ -39,21 +40,27 @@ export default function handler(req, res) {
       (restaurant) => restaurant.neighborhood_slug === neighborhood
     );
 
+    const count = neighborhoodRestaurants.length;
+
     if (!neighborhoodRestaurants.length) {
       return res
         .status(404)
         .json({ error: "No restaurants found in this neighborhood" });
     }
 
-    return res.status(200).json({
-      count: neighborhoodRestaurants.length,
-      summary,
-      transportation,
-      photos,
-      demographics,
-      places,
+    const jsonObject = {
+      name: name,
+      neighborhood_slug: neighborhood_slug,
+      count: count,
+      summary: summary,
+      transportation: transportation,
+      photos: photos,
+      demographics: demographics,
+      places: places,
       restaurants: neighborhoodRestaurants,
-    });
+    };
+
+    return res.status(200).json(jsonObject);
   } catch (e) {
     console.error(
       `Failed to retrieve data for neighborhood ${neighborhood}: ${e}`

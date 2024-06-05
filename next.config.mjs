@@ -25,11 +25,11 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "lh6.googleusercontent.com",
+        hostname: "images.squarespace-cdn.com",
       },
       {
         protocol: "https",
-        hostname: "lh3.googleusercontent.com",
+        hostname: "**",
       },
       {
         protocol: "https",

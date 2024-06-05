@@ -12,7 +12,6 @@ const RestaurantImageOverlay = ({ restaurant }) => {
         alt={restaurant.name}
         width={1600}
         height={600}
-        objectFit="cover"
         sizes="100vw"
       />
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent text-white p-6">

@@ -17,7 +17,7 @@ import UserActionButtons from "@/components/single/UserActionButtons";
 
 const fetchRestaurantData = async (slug) => {
   const baseUrl = getBaseUrl();
-  console.log("baseUrl", baseUrl);
+
   const response = await fetch(`${baseUrl}/api/restaurant/${slug}`);
   if (!response.ok) {
     throw new Error("Failed to fetch data");

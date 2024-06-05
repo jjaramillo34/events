@@ -3,6 +3,10 @@ import React from "react";
 const WorkingHours = ({ restaurant }) => {
   const workingHours = JSON.parse(restaurant.working_hours);
 
+  if (!workingHours) {
+    return null;
+  }
+
   return (
     <div className="bg-white p-12 rounded-lg shadow-lg mt-8">
       <h2 className="text-3xl font-bold text-center mb-6">Working Hours</h2>
