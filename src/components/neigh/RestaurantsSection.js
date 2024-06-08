@@ -5,6 +5,7 @@ import Image from "next/image";
 import mapboxgl from "mapbox-gl";
 import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
 import "mapbox-gl/dist/mapbox-gl.css";
+import RestaurantCard from "../common/RestaurantCard";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_API_KEY;
 
@@ -92,36 +93,14 @@ const RestaurantsSection = ({ neighborhood }) => {
               id="restaurantList"
               className={`${
                 isListViewVisible ? "grid" : "hidden"
-              } grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5`}
+              } grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5`}
             >
-              {neighborhood.restaurants.map((restaurant) => (
-                <a
+              {neighborhood.restaurants.map((restaurant, index) => (
+                <RestaurantCard
                   key={restaurant.slug}
-                  href={`/restaurant/${restaurant.slug}`}
-                  className="hover:shadow-2xl transition duration-500"
-                >
-                  <div className="bg-white rounded-xl shadow-xl overflow-hidden">
-                    <Image
-                      src={`/img/res/${restaurant.slug}.jpg`}
-                      className="w-full h-48 object-cover rounded-t-xl"
-                      alt={restaurant.name}
-                      width={400}
-                      height={300}
-                    />
-
-                    <div className="p-6">
-                      <h5 className="text-xl font-semibold mb-3 truncate">
-                        {restaurant.name}
-                      </h5>
-                      <p className="text-sm text-gray-700 mb-1">
-                        <strong>Phone:</strong> {restaurant.phone}
-                      </p>
-                      <p className="text-sm text-gray-700 mb-4">
-                        <strong>Address:</strong> {restaurant.street}
-                      </p>
-                    </div>
-                  </div>
-                </a>
+                  restaurant={restaurant}
+                  index={index}
+                />
               ))}
             </div>
 

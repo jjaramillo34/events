@@ -32,6 +32,7 @@ const AboutUs = () => {
               className="block mx-auto rounded-lg shadow-lg"
               width="400"
               height="400"
+              unoptimized={true}
             />
           </div>
         </div>

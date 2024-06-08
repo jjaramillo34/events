@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "aos/dist/aos.css"; // Import AOS styles
 import AOS from "aos"; // Import AOS for animations
+import Link from "next/link"; // Import Link for navigation
 
 const Services = () => {
   useEffect(() => {
@@ -32,12 +33,12 @@ const Services = () => {
             Discover the best venues for hosting your events. From corporate
             gatherings to private parties, we have got you covered.
           </p>
-          <button
-            className="bg-teal-500 text-white px-4 py-2 mt-4 rounded-full"
-            href="/events"
+          <Link
+            href="/restaurants/1"
+            className="bg-teal-500 text-white px-4 py-2 mt-4 rounded-full transition duration-300 hover:bg-teal-600"
           >
             Learn More
-          </button>
+          </Link>
         </div>
         <div
           className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center"
@@ -53,12 +54,12 @@ const Services = () => {
             Enjoy stunning views and great ambiance at our curated list of
             rooftop spots. Perfect for a night out or a relaxing evening.
           </p>
-          <button
-            className="bg-teal-500 text-white px-4 py-2 mt-4 rounded-full"
+          <Link
             href="/rooftops"
+            className="bg-teal-500 text-white px-4 py-2 mt-4 rounded-full transition duration-300 hover:bg-teal-600"
           >
             Learn More
-          </button>
+          </Link>
         </div>
         <div
           className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center"
@@ -74,9 +75,12 @@ const Services = () => {
             Find the hottest spots in town. Whether you&apos;re looking for a
             cozy cafe or a vibrant nightclub, we have recommendations for you.
           </p>
-          <button className="bg-teal-500 text-white px-4 py-2 mt-4 rounded-full">
+          <Link
+            href="/spots"
+            className="bg-teal-500 text-white px-4 py-2 mt-4 rounded-full transition duration-300 hover:bg-teal-600"
+          >
             Learn More
-          </button>
+          </Link>
         </div>
       </div>
     </div>

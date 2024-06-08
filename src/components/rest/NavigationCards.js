@@ -10,10 +10,10 @@ import {
 
 const NavigationCards = () => {
   const navigationItems = [
-    { title: "Borough", icon: faCity, link: "/borough" },
+    { title: "Borough", icon: faCity, link: "/boroughs" },
     { title: "Neighborhoods", icon: faMapMarkedAlt, link: "/neighborhoods" },
-    { title: "Zip Code", icon: faMapPin, link: "/zipcode" },
-    { title: "Type", icon: faUtensils, link: "/type" },
+    { title: "Zip Code", icon: faMapPin, link: "/postal-codes" },
+    { title: "Type", icon: faUtensils, link: "/types" },
   ];
 
   return (

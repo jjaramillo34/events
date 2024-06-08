@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
+import { getBaseUrl } from "../../../../helpers/getBaseUrl";
 import MainLayout from "@/components/layouts/MainLayout";
 import RestaurantsList from "@/components/rest/RestaurantList";
 import Hero from "@/components/rest/Hero";
 import NavigationCards from "@/components/rest/NavigationCards";
-import { getBaseUrl } from "../../../../helpers/getBaseUrl";
 
 const fetchRestaurants = async (page) => {
   const baseUrl = getBaseUrl();

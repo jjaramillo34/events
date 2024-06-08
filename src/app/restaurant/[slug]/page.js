@@ -33,36 +33,32 @@ const RestaurantPage = async ({ params }) => {
 
     return (
       <MainLayout title={restaurant.name}>
-        <main className="bg-white">
-          <div className="container mx-auto px-4 py-8 max-w-10xl bg-white bg-opacity-50">
-            {/* Breadcrumbs */}
-            <Breadcrumbs restaurant={restaurant} />
-            {/* Image Overlay */}
-            <RestaurantImageOverlay restaurant={restaurant} />
-            {/* Restaurant Logo and Price */}
-            <RestaurantLogoAndPrice restaurant={restaurant} />
-            {/* Main Information Grid */}
-            <MainInformationGrid restaurant={restaurant} />
-            {/* Services and Amenities */}
-            <ServicesAndAmenities restaurant={restaurant} />
-            {/* Working Hours */}
-            <WorkingHours restaurant={restaurant} />
-            {/* Other Hours */}
-            <OtherHours restaurant={restaurant} />
-            {/* Reviews and Ratings */}
-            <ReviewsAndRatings restaurant={restaurant} />
-            {/* Popular Tags */}
-            <PopularTags restaurant={restaurant} />
-            {/* Location Map */}
-            <LocationMap restaurant={restaurant} />
-            {/* Social Media Links */}
-            <SocialMediaLinks restaurant={restaurant} />
-            {/* Street View */}
-            <StreetView restaurant={restaurant} />
-            {/* User Action Buttons */}
-            <UserActionButtons />
-          </div>
-        </main>
+        {/* Breadcrumbs */}
+        <Breadcrumbs restaurant={restaurant} />
+        {/* Image Overlay */}
+        <RestaurantImageOverlay restaurant={restaurant} />
+        {/* Restaurant Logo and Price */}
+        <RestaurantLogoAndPrice restaurant={restaurant} />
+        {/* Main Information Grid */}
+        <MainInformationGrid restaurant={restaurant} />
+        {/* Services and Amenities */}
+        <ServicesAndAmenities restaurant={restaurant} />
+        {/* Working Hours */}
+        <WorkingHours restaurant={restaurant} />
+        {/* Other Hours */}
+        <OtherHours restaurant={restaurant} />
+        {/* Reviews and Ratings */}
+        <ReviewsAndRatings restaurant={restaurant} />
+        {/* Popular Tags */}
+        <PopularTags restaurant={restaurant} />
+        {/* Location Map */}
+        <LocationMap restaurant={restaurant} />
+        {/* Social Media Links */}
+        <SocialMediaLinks restaurant={restaurant} />
+        {/* Street View */}
+        <StreetView restaurant={restaurant} />
+        {/* User Action Buttons */}
+        <UserActionButtons />
       </MainLayout>
     );
   } catch (error) {

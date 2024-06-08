@@ -39,10 +39,11 @@ const AboutUsSection = () => {
           </div>
         </div>
         <p className="text-lg my-4" data-aos="fade-up" data-aos-delay="600">
-          Dedicated to uncovering the most unique dining experiences for your
-          events, our team believes in the magic of a perfectly matched venue.
-          Join us on a journey to discover spaces that turn any gathering into
-          an unforgettable affair.
+          Discover extraordinary dining events, scenic rooftop gatherings, and
+          unique culinary spots curated by our dedicated team. We are passionate
+          about creating memorable experiences in the perfect venue, whether
+          it&apos;s an intimate dinner or a grand celebration. Join us on this
+          journey to explore and enjoy the best spots your city has to offer.
         </p>
         <div
           className="mt-4 inline-block"

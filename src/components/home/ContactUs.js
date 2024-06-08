@@ -66,23 +66,23 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="section bg-gray-100 w-full py-8" id="contact">
-      <h2 className="text-center text-3xl font-bold mb-6 text-gray-800 uppercase">
+    <div className="section bg-gray-900 text-white w-full py-8" id="contact">
+      <h2 className="text-center text-3xl font-bold mb-6 text-white uppercase">
         Contact Us
       </h2>
       <div className="flex justify-center">
-        <div className="w-full md:w-2/3 lg:w-1/2 bg-white rounded-lg shadow-xl p-8">
+        <div className="w-full md:w-2/3 lg:w-1/2 bg-gray-800 rounded-lg shadow-xl p-8">
           <form id="contactForm" onSubmit={handleSubmit}>
             <div className="mb-6">
               <label
                 htmlFor="contactName"
-                className="block text-lg font-medium text-gray-700 mb-2"
+                className="block text-lg font-medium text-white mb-2"
               >
                 Name
               </label>
               <input
                 type="text"
-                className="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500 focus:border-blue-500"
+                className="form-input w-full px-4 py-2 border rounded-lg text-gray-900 focus:ring-teal-500 focus:border-teal-500"
                 id="contactName"
                 placeholder="Your name"
                 value={name}
@@ -93,13 +93,13 @@ const ContactForm = () => {
             <div className="mb-6">
               <label
                 htmlFor="contactEmail"
-                className="block text-lg font-medium text-gray-700 mb-2"
+                className="block text-lg font-medium text-white mb-2"
               >
                 Email address
               </label>
               <input
                 type="email"
-                className="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500 focus:border-blue-500"
+                className="form-input w-full px-4 py-2 border rounded-lg text-gray-900 focus:ring-teal-500 focus:border-teal-500"
                 id="contactEmail"
                 placeholder="name@example.com"
                 value={email}
@@ -110,12 +110,12 @@ const ContactForm = () => {
             <div className="mb-6">
               <label
                 htmlFor="contactMessage"
-                className="block text-lg font-medium text-gray-700 mb-2"
+                className="block text-lg font-medium text-white mb-2"
               >
                 Message
               </label>
               <textarea
-                className="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500 focus:border-blue-500"
+                className="form-input w-full px-4 py-2 border rounded-lg text-gray-900 focus:ring-teal-500 focus:border-teal-500"
                 id="contactMessage"
                 rows="5"
                 placeholder="Your message here..."
@@ -127,7 +127,7 @@ const ContactForm = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className="bg-teal-400 text-white hover:bg-black font-bold py-2 px-6 rounded-full transition-colors duration-300"
+                className="bg-teal-500 text-white hover:bg-teal-600 font-bold py-2 px-6 rounded-full transition-colors duration-300"
                 disabled={formStatus === "loading"}
               >
                 {formStatus === "loading" ? "Sending..." : "Send Message"}

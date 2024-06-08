@@ -57,7 +57,7 @@ const HeroSection = () => {
           dining rooms to breathtaking rooftop venues.
         </p>
         <a
-          href="/restaurants"
+          href="/restaurants/1"
           className="bg-teal-600 text-white hover:bg-black hover:text-white font-bold py-2 px-8 rounded-full uppercase text-lg"
           data-aos="zoom-in"
           data-aos-delay="1500"
