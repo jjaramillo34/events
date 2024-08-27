@@ -30,14 +30,8 @@ export function getHealth() {
 // Server-side only functions
 export async function loadData(filePath) {
   if (typeof window === "undefined") {
-    const { serverRuntimeConfig } = getConfig();
-
     try {
-      const jsonDirectory = path.join(
-        serverRuntimeConfig.PROJECT_ROOT,
-        "public",
-        filePath
-      );
+      const jsonDirectory = path.join(process.cwd(), "public", filePath);
       const fileContents = await fs.readFile(jsonDirectory, "utf8");
       const data = JSON.parse(fileContents);
 

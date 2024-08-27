@@ -1,9 +1,3 @@
-import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -40,11 +34,6 @@ const nextConfig = {
       },
     ],
   },
-  // Add this to ensure data files are included in the build
-  serverRuntimeConfig: {
-    PROJECT_ROOT: __dirname,
-  },
-  // You can keep optimizeFonts if needed
   optimizeFonts: true,
 };
 

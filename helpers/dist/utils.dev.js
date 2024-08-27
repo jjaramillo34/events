@@ -55,24 +55,22 @@ function getHealth() {
 
 
 function loadData(filePath) {
-  var _getConfig, serverRuntimeConfig, jsonDirectory, fileContents, data;
-
+  var jsonDirectory, fileContents, data;
   return regeneratorRuntime.async(function loadData$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           if (!(typeof window === "undefined")) {
-            _context.next = 18;
+            _context.next = 17;
             break;
           }
 
-          _getConfig = (0, _config["default"])(), serverRuntimeConfig = _getConfig.serverRuntimeConfig;
-          _context.prev = 2;
-          jsonDirectory = _path2["default"].join(serverRuntimeConfig.PROJECT_ROOT, "public", filePath);
-          _context.next = 6;
+          _context.prev = 1;
+          jsonDirectory = _path2["default"].join(process.cwd(), "public", filePath);
+          _context.next = 5;
           return regeneratorRuntime.awrap(_fs2.promises.readFile(jsonDirectory, "utf8"));
 
-        case 6:
+        case 5:
           fileContents = _context.sent;
           data = JSON.parse(fileContents);
           data.forEach(function (item) {
@@ -92,26 +90,26 @@ function loadData(filePath) {
           });
           return _context.abrupt("return", data);
 
-        case 12:
-          _context.prev = 12;
-          _context.t0 = _context["catch"](2);
+        case 11:
+          _context.prev = 11;
+          _context.t0 = _context["catch"](1);
           console.error("Failed to load data from ".concat(filePath, ": ").concat(_context.t0));
           return _context.abrupt("return", []);
 
-        case 16:
-          _context.next = 20;
+        case 15:
+          _context.next = 19;
           break;
 
-        case 18:
+        case 17:
           console.error("loadData function is only available on the server side");
           return _context.abrupt("return", []);
 
-        case 20:
+        case 19:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[2, 12]]);
+  }, null, null, [[1, 11]]);
 }
 
 function getVersion() {
