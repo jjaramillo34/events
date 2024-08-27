@@ -5,9 +5,13 @@ import "../../styles/globals.css";
 
 const MainLayout = ({ children }) => {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      {children}
+      <main className="flex-grow pt-20">
+        {" "}
+        {/* Adjust pt-20 as needed */}
+        {children}
+      </main>
       <Footer />
     </div>
   );

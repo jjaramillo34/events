@@ -9,7 +9,17 @@ exports.getHealth = getHealth;
 exports.loadData = loadData;
 exports.getVersion = getVersion;
 
+var _config = _interopRequireDefault(require("next/config"));
+
+var _fs2 = require("fs");
+
+var _path2 = _interopRequireDefault(require("path"));
+
+var _slugify = _interopRequireDefault(require("slugify"));
+
 var _libphonenumberJs = require("libphonenumber-js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -45,48 +55,29 @@ function getHealth() {
 
 
 function loadData(filePath) {
-  var fs, path, slugify, jsonDirectory, fileContents, data;
+  var _getConfig, serverRuntimeConfig, jsonDirectory, fileContents, data;
+
   return regeneratorRuntime.async(function loadData$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           if (!(typeof window === "undefined")) {
-            _context.next = 26;
+            _context.next = 18;
             break;
           }
 
-          _context.next = 3;
-          return regeneratorRuntime.awrap(Promise.resolve().then(function () {
-            return _interopRequireWildcard(require("fs/promises"));
-          }));
-
-        case 3:
-          fs = _context.sent;
+          _getConfig = (0, _config["default"])(), serverRuntimeConfig = _getConfig.serverRuntimeConfig;
+          _context.prev = 2;
+          jsonDirectory = _path2["default"].join(serverRuntimeConfig.PROJECT_ROOT, "public", filePath);
           _context.next = 6;
-          return regeneratorRuntime.awrap(Promise.resolve().then(function () {
-            return _interopRequireWildcard(require("path"));
-          }));
+          return regeneratorRuntime.awrap(_fs2.promises.readFile(jsonDirectory, "utf8"));
 
         case 6:
-          path = _context.sent;
-          _context.next = 9;
-          return regeneratorRuntime.awrap(Promise.resolve().then(function () {
-            return _interopRequireWildcard(require("slugify"));
-          }));
-
-        case 9:
-          slugify = _context.sent["default"];
-          _context.prev = 10;
-          jsonDirectory = path.join(process.cwd(), "public", filePath);
-          _context.next = 14;
-          return regeneratorRuntime.awrap(fs.readFile(jsonDirectory, "utf8"));
-
-        case 14:
           fileContents = _context.sent;
           data = JSON.parse(fileContents);
           data.forEach(function (item) {
-            item.neighborhood_slug = slugify((item.neighborhood || "").toLowerCase());
-            item.borough_slug = slugify((item.borough2 || "").toLowerCase());
+            item.neighborhood_slug = (0, _slugify["default"])((item.neighborhood || "").toLowerCase());
+            item.borough_slug = (0, _slugify["default"])((item.borough2 || "").toLowerCase());
             ["phone_1", "phone_2", "phone_3"].forEach(function (phoneKey) {
               var phone = item[phoneKey];
 
@@ -101,30 +92,31 @@ function loadData(filePath) {
           });
           return _context.abrupt("return", data);
 
-        case 20:
-          _context.prev = 20;
-          _context.t0 = _context["catch"](10);
+        case 12:
+          _context.prev = 12;
+          _context.t0 = _context["catch"](2);
           console.error("Failed to load data from ".concat(filePath, ": ").concat(_context.t0));
           return _context.abrupt("return", []);
 
-        case 24:
-          _context.next = 28;
+        case 16:
+          _context.next = 20;
           break;
 
-        case 26:
+        case 18:
           console.error("loadData function is only available on the server side");
           return _context.abrupt("return", []);
 
-        case 28:
+        case 20:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[10, 20]]);
+  }, null, null, [[2, 12]]);
 }
 
 function getVersion() {
-  var fs, path, versionFilePath, version;
+  var _fs, _path, versionFilePath, version;
+
   return regeneratorRuntime.async(function getVersion$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
@@ -140,18 +132,18 @@ function getVersion() {
           }));
 
         case 3:
-          fs = _context2.sent;
+          _fs = _context2.sent;
           _context2.next = 6;
           return regeneratorRuntime.awrap(Promise.resolve().then(function () {
             return _interopRequireWildcard(require("path"));
           }));
 
         case 6:
-          path = _context2.sent;
-          versionFilePath = path.join(process.cwd(), "data", "version.txt");
+          _path = _context2.sent;
+          versionFilePath = _path.join(process.cwd(), "data", "version.txt");
           _context2.prev = 8;
           _context2.next = 11;
-          return regeneratorRuntime.awrap(fs.readFile(versionFilePath, "utf8"));
+          return regeneratorRuntime.awrap(_fs.readFile(versionFilePath, "utf8"));
 
         case 11:
           version = _context2.sent;

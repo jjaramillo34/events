@@ -1,4 +1,8 @@
 // utils.js
+import getConfig from "next/config";
+import { promises as fs } from "fs";
+import path from "path";
+import slugify from "slugify";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 
 export function getBaseUrl() {
@@ -26,12 +30,14 @@ export function getHealth() {
 // Server-side only functions
 export async function loadData(filePath) {
   if (typeof window === "undefined") {
-    const fs = await import("fs/promises");
-    const path = await import("path");
-    const slugify = (await import("slugify")).default;
+    const { serverRuntimeConfig } = getConfig();
 
     try {
-      const jsonDirectory = path.join(process.cwd(), "public", filePath);
+      const jsonDirectory = path.join(
+        serverRuntimeConfig.PROJECT_ROOT,
+        "public",
+        filePath
+      );
       const fileContents = await fs.readFile(jsonDirectory, "utf8");
       const data = JSON.parse(fileContents);
 
