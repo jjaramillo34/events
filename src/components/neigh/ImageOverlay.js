@@ -1,25 +1,40 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 const NeighborhoodDetail = ({ neighborhood }) => {
   return (
-    <div className="relative group mb-8">
-      <Image
-        src={neighborhood.photos[0].image}
-        alt={neighborhood.name}
-        width={1920}
-        height={1080}
-        priority={true}
-        className="w-full h-64 object-cover rounded-3xl shadow-2xl transition-all duration-300 group-hover:opacity-75"
-      />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <h1 className="text-7xl font-bold text-teal-700 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 uppercase">
-          {neighborhood.name}
-        </h1>
-      </div>
-    </div>
+    <Card className="relative overflow-hidden rounded-3xl shadow-2xl mb-8">
+      <CardContent className="p-0">
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
+          className="relative aspect-[16/9]"
+        >
+          <Image
+            src={neighborhood.photos[0].image}
+            alt={neighborhood.name}
+            layout="fill"
+            objectFit="cover"
+            priority={true}
+            className="transition-all duration-300"
+          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileHover={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+          >
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center uppercase">
+              {neighborhood.name}
+            </h1>
+          </motion.div>
+        </motion.div>
+      </CardContent>
+    </Card>
   );
 };
 

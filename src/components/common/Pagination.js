@@ -1,10 +1,9 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
 
 const Pagination = ({ page, totalPages }) => {
   const getPageNumbers = (maxPagesToShow) => {
@@ -12,75 +11,91 @@ const Pagination = ({ page, totalPages }) => {
     let startPage = Math.max(1, page - Math.floor(maxPagesToShow / 2));
     let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
 
-    // Adjust startPage if there are less than maxPagesToShow pages remaining
     if (endPage - startPage + 1 < maxPagesToShow) {
       startPage = Math.max(1, endPage - maxPagesToShow + 1);
+    }
+
+    if (startPage > 1) {
+      pages.push(1);
+      if (startPage > 2) pages.push("ellipsis");
     }
 
     for (let i = startPage; i <= endPage; i++) {
       pages.push(i);
     }
+
+    if (endPage < totalPages) {
+      if (endPage < totalPages - 1) pages.push("ellipsis");
+      pages.push(totalPages);
+    }
+
     return pages;
   };
 
+  const renderPageButton = (pageNumber) => (
+    <Button
+      key={pageNumber}
+      variant={pageNumber === page ? "default" : "outline"}
+      size="icon"
+      asChild
+    >
+      <Link href={`/restaurants/${pageNumber}`}>{pageNumber}</Link>
+    </Button>
+  );
+
   return (
-    <div className="flex justify-center items-center space-x-2 mt-8">
-      {page > 1 && (
-        <Link
-          href={`/restaurants/${page - 1}`}
-          passHref
-          className="flex items-center bg-teal-600 border border-teal-600 text-white hover:bg-teal-700 py-2 px-3 rounded-full transition duration-300"
-        >
-          <FontAwesomeIcon icon={faChevronLeft} />
+    <nav className="flex justify-center items-center space-x-2 mt-8">
+      <Button variant="outline" size="icon" disabled={page <= 1} asChild>
+        <Link href={`/restaurants/${page - 1}`}>
+          <ChevronLeft className="h-4 w-4" />
         </Link>
-      )}
+      </Button>
 
-      {/* Mobile view (5 pages) */}
-      <div className="flex space-x-2 sm:hidden">
-        {getPageNumbers(5).map((pageNumber) => (
-          <Link
-            key={pageNumber}
-            href={`/restaurants/${pageNumber}`}
-            passHref
-            className={`flex items-center border ${
-              pageNumber === page
-                ? "bg-teal-700 text-white"
-                : "bg-white text-teal-600 hover:bg-teal-600 hover:text-white"
-            } py-2 px-3 rounded-full transition duration-300`}
-          >
-            {pageNumber}
-          </Link>
-        ))}
+      <div className="hidden md:flex space-x-2">
+        {getPageNumbers(7).map((pageNumber, index) =>
+          pageNumber === "ellipsis" ? (
+            <Button
+              key={`ellipsis-${index}`}
+              variant="outline"
+              size="icon"
+              disabled
+            >
+              <MoreHorizontal className="h-4 w-4" />
+            </Button>
+          ) : (
+            renderPageButton(pageNumber)
+          )
+        )}
       </div>
 
-      {/* Desktop view (10 pages) */}
-      <div className="hidden sm:flex space-x-2">
-        {getPageNumbers(10).map((pageNumber) => (
-          <Link
-            key={pageNumber}
-            href={`/restaurants/${pageNumber}`}
-            passHref
-            className={`flex items-center border ${
-              pageNumber === page
-                ? "bg-teal-700 text-white"
-                : "bg-white text-teal-600 hover:bg-teal-600 hover:text-white"
-            } py-2 px-3 rounded-full transition duration-300`}
-          >
-            {pageNumber}
-          </Link>
-        ))}
+      <div className="flex md:hidden space-x-2">
+        {getPageNumbers(3).map((pageNumber, index) =>
+          pageNumber === "ellipsis" ? (
+            <Button
+              key={`ellipsis-${index}`}
+              variant="outline"
+              size="icon"
+              disabled
+            >
+              <MoreHorizontal className="h-4 w-4" />
+            </Button>
+          ) : (
+            renderPageButton(pageNumber)
+          )
+        )}
       </div>
 
-      {page < totalPages && (
-        <Link
-          href={`/restaurants/${page + 1}`}
-          passHref
-          className="flex items-center bg-teal-600 border border-teal-600 text-white hover:bg-teal-700 py-2 px-3 rounded-full transition duration-300"
-        >
-          <FontAwesomeIcon icon={faChevronRight} />
+      <Button
+        variant="outline"
+        size="icon"
+        disabled={page >= totalPages}
+        asChild
+      >
+        <Link href={`/restaurants/${page + 1}`}>
+          <ChevronRight className="h-4 w-4" />
         </Link>
-      )}
-    </div>
+      </Button>
+    </nav>
   );
 };
 

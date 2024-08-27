@@ -17,12 +17,14 @@ import UserActionButtons from "@/components/single/UserActionButtons";
 
 const fetchRestaurantData = async (slug) => {
   const baseUrl = getBaseUrl();
-
+  console.log("Base URL:", baseUrl);
   const response = await fetch(`${baseUrl}/api/restaurant/${slug}`);
+
   if (!response.ok) {
     throw new Error("Failed to fetch data");
   }
   const data = await response.json();
+  console.log("Fetched restaurant data:", data);
   return data;
 };
 
@@ -31,33 +33,22 @@ const RestaurantPage = async ({ params }) => {
   try {
     const restaurant = await fetchRestaurantData(slug);
 
+    console.log("Restaurant data for rendering:", restaurant);
+
     return (
       <MainLayout title={restaurant.name}>
-        {/* Breadcrumbs */}
         <Breadcrumbs restaurant={restaurant} />
-        {/* Image Overlay */}
         <RestaurantImageOverlay restaurant={restaurant} />
-        {/* Restaurant Logo and Price */}
         <RestaurantLogoAndPrice restaurant={restaurant} />
-        {/* Main Information Grid */}
         <MainInformationGrid restaurant={restaurant} />
-        {/* Services and Amenities */}
         <ServicesAndAmenities restaurant={restaurant} />
-        {/* Working Hours */}
         <WorkingHours restaurant={restaurant} />
-        {/* Other Hours */}
         <OtherHours restaurant={restaurant} />
-        {/* Reviews and Ratings */}
         <ReviewsAndRatings restaurant={restaurant} />
-        {/* Popular Tags */}
         <PopularTags restaurant={restaurant} />
-        {/* Location Map */}
         <LocationMap restaurant={restaurant} />
-        {/* Social Media Links */}
         <SocialMediaLinks restaurant={restaurant} />
-        {/* Street View */}
         <StreetView restaurant={restaurant} />
-        {/* User Action Buttons */}
         <UserActionButtons />
       </MainLayout>
     );

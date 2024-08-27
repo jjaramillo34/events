@@ -1,86 +1,84 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import {
-  faCalendarAlt,
-  faBuilding,
-  faMapMarkerAlt,
-} from "@fortawesome/free-solid-svg-icons";
-import "aos/dist/aos.css"; // Import AOS styles
-import AOS from "aos"; // Import AOS for animations
-import Link from "next/link"; // Import Link for navigation
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Calendar, Building, MapPin } from "lucide-react";
+
+const ServiceCard = ({ icon: Icon, title, description, link, delay }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay }}
+  >
+    <Card className="h-full flex flex-col">
+      <CardHeader>
+        <div className="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center mb-4">
+          <Icon className="h-6 w-6 text-teal-600" />
+        </div>
+        <CardTitle>{title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <CardDescription>{description}</CardDescription>
+      </CardContent>
+      <CardFooter className="mt-auto">
+        <Button asChild variant="outline" className="w-full">
+          <Link href={link}>Learn More</Link>
+        </Button>
+      </CardFooter>
+    </Card>
+  </motion.div>
+);
 
 const Services = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+  const services = [
+    {
+      icon: Calendar,
+      title: "Events",
+      description:
+        "Discover the best venues for hosting your events. From corporate gatherings to private parties, we have got you covered.",
+      link: "/restaurants/1",
+    },
+    {
+      icon: Building,
+      title: "Rooftops",
+      description:
+        "Enjoy stunning views and great ambiance at our curated list of rooftop spots. Perfect for a night out or a relaxing evening.",
+      link: "/rooftops",
+    },
+    {
+      icon: MapPin,
+      title: "Spots",
+      description:
+        "Find the hottest spots in town. Whether you're looking for a cozy cafe or a vibrant nightclub, we have recommendations for you.",
+      link: "/spots",
+    },
+  ];
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-10xl bg-white bg-opacity-50">
-      <h2 className="text-4xl font-bold text-center mb-8">Our Services</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div
-          className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center"
-          data-aos="fade-up"
+    <div className="bg-gradient-to-b from-white to-gray-100 py-16">
+      <div className="container mx-auto px-4">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold text-center mb-12"
         >
-          <FontAwesomeIcon
-            icon={faCalendarAlt}
-            className="text-6xl text-teal-500 mb-4"
-          />
-          <h3 className="text-2xl font-semibold mb-2">Events</h3>
-          <p className="text-gray-600 text-center">
-            Discover the best venues for hosting your events. From corporate
-            gatherings to private parties, we have got you covered.
-          </p>
-          <Link
-            href="/restaurants/1"
-            className="bg-teal-500 text-white px-4 py-2 mt-4 rounded-full transition duration-300 hover:bg-teal-600"
-          >
-            Learn More
-          </Link>
-        </div>
-        <div
-          className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <FontAwesomeIcon
-            icon={faBuilding}
-            className="text-6xl text-teal-500 mb-4"
-          />
-          <h3 className="text-2xl font-semibold mb-2">Rooftops</h3>
-          <p className="text-gray-600 text-center">
-            Enjoy stunning views and great ambiance at our curated list of
-            rooftop spots. Perfect for a night out or a relaxing evening.
-          </p>
-          <Link
-            href="/rooftops"
-            className="bg-teal-500 text-white px-4 py-2 mt-4 rounded-full transition duration-300 hover:bg-teal-600"
-          >
-            Learn More
-          </Link>
-        </div>
-        <div
-          className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          <FontAwesomeIcon
-            icon={faMapMarkerAlt}
-            className="text-6xl text-teal-500 mb-4"
-          />
-          <h3 className="text-2xl font-semibold mb-2">Spots</h3>
-          <p className="text-gray-600 text-center">
-            Find the hottest spots in town. Whether you&apos;re looking for a
-            cozy cafe or a vibrant nightclub, we have recommendations for you.
-          </p>
-          <Link
-            href="/spots"
-            className="bg-teal-500 text-white px-4 py-2 mt-4 rounded-full transition duration-300 hover:bg-teal-600"
-          >
-            Learn More
-          </Link>
+          Our Services
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <ServiceCard key={service.title} {...service} delay={index * 0.2} />
+          ))}
         </div>
       </div>
     </div>

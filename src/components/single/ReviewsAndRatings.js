@@ -1,63 +1,58 @@
+"use client";
+
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faStar,
-  faStarHalfAlt,
-  faStar as farStar,
-} from "@fortawesome/free-solid-svg-icons";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { Star, StarHalf } from "lucide-react";
+
+const StarRating = ({ rating }) => {
+  return (
+    <div className="flex">
+      {[...Array(5)].map((_, i) => {
+        if (i < Math.floor(rating)) {
+          return <Star key={i} className="text-yellow-400 fill-current" />;
+        } else if (i === Math.floor(rating) && !Number.isInteger(rating)) {
+          return <StarHalf key={i} className="text-yellow-400 fill-current" />;
+        } else {
+          return <Star key={i} className="text-gray-300" />;
+        }
+      })}
+    </div>
+  );
+};
 
 const ReviewsAndRatings = ({ restaurant }) => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg mt-8">
-      <h2 className="text-4xl font-bold text-center mb-6">Reviews & Ratings</h2>
-      <p className="text-xl text-center mb-6">
-        Average Rating: {restaurant.rating} (based on {restaurant.reviews}{" "}
-        reviews)
-      </p>
-      <div className="flex justify-center space-x-4 mb-6">
-        {[...Array(Math.floor(restaurant.rating))].map((_, i) => (
-          <FontAwesomeIcon
-            key={i}
-            icon={faStar}
-            className="text-yellow-400 text-3xl animate__animated animate__fadeIn"
-          />
-        ))}
-        {restaurant.rating % 1 !== 0 && (
-          <FontAwesomeIcon
-            icon={faStarHalfAlt}
-            className="text-yellow-400 text-3xl animate__animated animate__fadeIn"
-          />
-        )}
-        {[...Array(5 - Math.ceil(restaurant.rating))].map((_, i) => (
-          <FontAwesomeIcon
-            key={i}
-            icon={farStar}
-            className="text-yellow-400 text-3xl animate__animated animate__fadeIn"
-          />
-        ))}
-      </div>
+    <Card className="mt-8">
+      <CardHeader>
+        <CardTitle className="text-3xl font-bold text-center">
+          Reviews & Ratings
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="text-center mb-6">
+          <p className="text-4xl font-bold">{restaurant.rating.toFixed(1)}</p>
+          <StarRating rating={restaurant.rating} />
+          <p className="text-sm text-gray-500 mt-2">
+            Based on {restaurant.reviews} reviews
+          </p>
+        </div>
 
-      <div className="flex flex-wrap justify-center gap-4">
-        {[...Array(5)].map((_, i) => {
-          const score = restaurant[`reviews_per_score_${i + 1}`];
-          return (
-            score > 0 && (
-              <div key={i} className="bg-gray-100 p-4 rounded-lg shadow">
-                <div className="text-yellow-400">
-                  {[...Array(i + 1)].map((_, j) => (
-                    <FontAwesomeIcon key={j} icon={faStar} />
-                  ))}
-                </div>
-                <p className="text-sm text-gray-700">
-                  {score} review{score > 1 ? "s" : ""} with {i + 1} star
-                  {i + 1 > 1 ? "s" : ""}
-                </p>
+        <div className="space-y-4">
+          {[5, 4, 3, 2, 1].map((stars) => {
+            const score = restaurant[`reviews_per_score_${stars}`];
+            const percentage = (score / restaurant.reviews) * 100;
+            return (
+              <div key={stars} className="flex items-center">
+                <span className="w-12 text-sm">{stars} star</span>
+                <Progress value={percentage} className="h-2 mx-4 flex-grow" />
+                <span className="w-12 text-sm text-right">{score}</span>
               </div>
-            )
-          );
-        })}
-      </div>
-    </div>
+            );
+          })}
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 

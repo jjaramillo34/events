@@ -1,10 +1,14 @@
 import { loadData } from "../../../../helpers/utils";
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const { slug } = req.query;
 
+  if (req.method !== "GET") {
+    return res.status(405).json({ error: "Method Not Allowed" });
+  }
+
   try {
-    const data = loadData("data/restaurants.json");
+    const data = await loadData("data/restaurants.json");
     const restaurant = data.find((r) => r.slug === slug);
 
     if (restaurant) {

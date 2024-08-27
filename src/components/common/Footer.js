@@ -1,190 +1,201 @@
 "use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import {
-  faFacebookF,
-  faTwitter,
-  faInstagram,
-  faLinkedinIn,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faHome,
-  faEnvelope,
-  faPhone,
-  faPrint,
-  faCoffee,
-  faHandHoldingUsd,
-} from "@fortawesome/free-solid-svg-icons";
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Github,
+  Home,
+  Mail,
+  Phone,
+  Coffee,
+  DollarSign,
+} from "lucide-react";
 
 const Footer = () => {
+  const socialLinks = [
+    {
+      href: "https://www.facebook.com/javier.jaramillo3/",
+      icon: Facebook,
+      label: "Facebook",
+    },
+    {
+      href: "https://twitter.com/jejaramilloc",
+      icon: Twitter,
+      label: "Twitter",
+    },
+    {
+      href: "https://www.instagram.com/jjaramillo321/",
+      icon: Instagram,
+      label: "Instagram",
+    },
+    {
+      href: "https://www.linkedin.com/in/javierjaramillo1/",
+      icon: Linkedin,
+      label: "LinkedIn",
+    },
+    { href: "https://github.com/jjaramillo34", icon: Github, label: "GitHub" },
+  ];
+
+  const quickLinks = [
+    { href: "/", label: "Home" },
+    { href: "/restaurants", label: "Restaurants" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
-    <footer className="bg-gray-200 py-15">
-      <section className="container mx-auto px-4 py-8">
-        <div
-          className="grid grid-cols-1 md:grid-cols-4 gap-4 relative"
-          id="grid-container"
-        >
-          <div className="bg-footer-texture bg-cover bg-center rounded-lg md:col-span-1"></div>
+    <footer className="relative bg-teal-800 text-white">
+      <div className="absolute inset-0 overflow-hidden">
+        <Image
+          src="/img/ny.png"
+          alt="New York City Skyline"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-10"
+        />
+      </div>
+      <div className="relative container mx-auto px-4 py-12 z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="col-span-1 md:col-span-2 lg:col-span-1 bg-teal-700/50 backdrop-blur-sm text-white border-none">
+            <CardContent className="p-6">
+              <h2 className="text-2xl font-bold mb-4">Restaurants Directory</h2>
+              <p className="mb-4">
+                Discover the best dining experiences in New York City. From cozy
+                cafes to rooftop restaurants, we&apos;ve got you covered.
+              </p>
+              <div className="flex space-x-4">
+                {socialLinks.map((link) => (
+                  <Button
+                    key={link.label}
+                    variant="ghost"
+                    size="icon"
+                    asChild
+                    className="text-white hover:text-teal-200 hover:bg-teal-600/50"
+                  >
+                    <Link
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <link.icon className="h-5 w-5" />
+                      <span className="sr-only">{link.label}</span>
+                    </Link>
+                  </Button>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
 
-          <div className="text-center md:text-center md:col-span-1 text-sm">
-            <h6 className="font-semibold uppercase mb-2 text-gray-800">
-              {" "}
-              Follow Us
-            </h6>
-            <div className="flex justify-center md:justify-center space-x-2">
+          <Card className="bg-teal-700/50 backdrop-blur-sm text-white border-none">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                {quickLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="hover:text-teal-200">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-teal-700/50 backdrop-blur-sm text-white border-none">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-4">
+                Contact Information
+              </h3>
+              <div className="space-y-2">
+                <p className="flex items-center">
+                  <Home className="mr-2 h-4 w-4" />
+                  368 9th Ave, New York, NY 10001
+                </p>
+                <p className="flex items-center">
+                  <Mail className="mr-2 h-4 w-4" />
+                  <a
+                    href="mailto:javier@jaramillohub.com"
+                    className="hover:text-teal-200"
+                  >
+                    javier@jaramillohub.com
+                  </a>
+                </p>
+                <p className="flex items-center">
+                  <Phone className="mr-2 h-4 w-4" />
+                  +1 347 239 9026
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <Separator className="my-8 bg-teal-600/50" />
+
+        <div className="text-center space-y-4">
+          <h3 className="text-xl font-semibold">Support Us</h3>
+          <p>
+            If you like our work, you can support us by buying us a coffee or
+            donating.
+          </p>
+          <div className="space-x-4">
+            <Button
+              asChild
+              variant="outline"
+              className="bg-teal-600/50 text-white hover:bg-teal-500/50 border-teal-500"
+            >
               <Link
-                href="https://www.facebook.com/javier.jaramillo3/"
-                className="text-gray-600 hover:text-blue-400"
+                href="https://www.buymeacoffee.com/jjaramillo"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FontAwesomeIcon icon={faFacebookF} size="lg" />
+                <Coffee className="mr-2 h-4 w-4" />
+                Buy Me a Coffee
               </Link>
-
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="bg-teal-600/50 text-white hover:bg-teal-500/50 border-teal-500"
+            >
               <Link
-                href="https://twitter.com/jejaramilloc"
-                className="text-gray-600 hover:text-blue-400"
+                href="https://www.zeffy.com/en-US/embed/donation-form/b049bb8b-44c1-4adb-ae7e-9f816c4ca942?modal=true"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FontAwesomeIcon icon={faTwitter} size="lg" />
+                <DollarSign className="mr-2 h-4 w-4" />
+                Donate
               </Link>
-
-              <Link
-                href="https://www.instagram.com/jjaramillo321/"
-                className="text-gray-600 hover:text-pink-600"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faInstagram} size="lg" />
-              </Link>
-
-              <Link
-                href="https://www.linkedin.com/in/javierjaramillo1/"
-                className="text-gray-600 hover:text-blue-700"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-              </Link>
-
-              <Link
-                href="https://github.com/jjaramillo34"
-                className="text-gray-600 hover:text-gray-800"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faGithub} size="lg" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="text-center md:text-center md:col-span-1 text-sm mt-4 md:mt-0 text-gray-800">
-            <h6 className="font-semibold uppercase mb-2">Quick Links</h6>
-            <ul className="list-none">
-              <li>
-                <Link href="/" className="hover:text-blue-500">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/restaurants" className="hover:text-blue-500">
-                  Restaurants
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/about" className="hover:text-blue-500">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-blue-500">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div
-            className="text-center md:text-left md:col-span-1 text-sm mt-4 md:mt-0 text-gray-800"
-            id="contact-social"
-          >
-            <h6 className="font-semibold uppercase mb-2">
-              Contact Information
-            </h6>
-            <p>
-              <FontAwesomeIcon icon={faHome} size="sm" className="mr-2" />
-              368 9th Ave, New York, NY 10001
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faEnvelope} size="sm" className="mr-2" />
-              <a
-                href="mailto:javier@jaramillohub.com"
-                className="hover:text-blue-500"
-              >
-                javier@jaramillohub.com
-              </a>
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faPhone} size="sm" className="mr-2" />
-              +1 347 239 9026
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faPrint} size="sm" className="mr-2" />
-              +1 347 239 9026
-            </p>
+            </Button>
           </div>
         </div>
-      </section>
 
-      <section className="text-center py-4 bg-gray-100" id="donate">
-        <h6 className="text-lg font-semibold mb-4 text-gray-800">
-          {" "}
-          Support Us
-        </h6>
-        <p className="text-sm text-gray-600">
-          If you like our work, you can support us by buying us a coffee or
-          donating.
-        </p>
-        <br />
-        <Link
-          href="https://www.buymeacoffee.com/jjaramillo"
-          className="bg-teal-400 hover:bg-black text-white font-bold py-2 px-4 rounded-full m-2 transition-colors duration-300 ease-in-out shadow-md"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faCoffee} className="mr-2" /> Buy Me a Coffee
-        </Link>
-        <Link
-          href="https://www.zeffy.com/en-US/embed/donation-form/b049bb8b-44c1-4adb-ae7e-9f816c4ca942?modal=true"
-          className="bg-teal-400 hover:bg-black text-white font-bold py-2 px-4 rounded-full m-2 transition-colors duration-300 ease-in-out shadow-md"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faHandHoldingUsd} className="mr-2" /> Donate
-        </Link>
-      </section>
+        <Separator className="my-8 bg-teal-600/50" />
 
-      <div className="text-center mt-4 py-4 bg-gray-100">
-        <p className="text-sm text-gray-600">
-          © 2024{" "}
-          <Link href="/" className="hover:text-blue-500">
-            Restaurants Directory
-          </Link>
-          . All rights reserved. Developed by{" "}
-          <Link
-            href="https://jaramillohub.com"
-            target="_blank"
-            className="hover:text-blue-500"
-            rel="noopener noreferrer"
-          >
-            Javier Jaramillo
-          </Link>
-        </p>
+        <div className="text-center text-sm">
+          <p>
+            © 2024{" "}
+            <Link href="/" className="hover:text-teal-200">
+              Restaurants Directory
+            </Link>
+            . All rights reserved. Developed by{" "}
+            <Link
+              href="https://jaramillohub.com"
+              target="_blank"
+              className="hover:text-teal-200"
+              rel="noopener noreferrer"
+            >
+              Javier Jaramillo
+            </Link>
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -2,9 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import RestaurantCard from "../common/RestaurantCard";
 
 const FeaturedRestaurants = () => {
@@ -13,8 +14,6 @@ const FeaturedRestaurants = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
-
     const fetchRestaurants = async () => {
       try {
         const response = await fetch("/api/random");
@@ -22,10 +21,16 @@ const FeaturedRestaurants = () => {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        if (!Array.isArray(data)) {
+        console.log("Fetched data:", data); // Log the data to verify structure
+
+        // Access the restaurants array within the response object
+        const restaurantsArray = data.restaurants;
+
+        if (!Array.isArray(restaurantsArray)) {
           throw new Error("Data is not an array");
         }
-        setRestaurants(data);
+
+        setRestaurants(restaurantsArray);
       } catch (error) {
         console.error("Failed to fetch restaurants:", error);
         setError(error.message);
@@ -37,37 +42,92 @@ const FeaturedRestaurants = () => {
     fetchRestaurants();
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="section bg-gray-100 w-full py-8">
+        <div className="container mx-auto text-center my-8">
+          <h2 className="text-4xl font-bold text-gray-800 my-4">
+            Featured Restaurants
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {[...Array(12)].map((_, index) => (
+              <Card key={index}>
+                <CardContent className="p-4">
+                  <Skeleton className="h-48 w-full mb-4" />
+                  <Skeleton className="h-4 w-3/4 mb-2" />
+                  <Skeleton className="h-4 w-1/2" />
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <Card className="w-full max-w-md mx-auto mt-8">
+        <CardContent className="p-6">
+          <h2 className="text-2xl font-bold text-red-600 mb-4">Error</h2>
+          <p className="text-gray-700">{error}</p>
+        </CardContent>
+      </Card>
+    );
   }
 
   return (
     <div className="section bg-gray-100 w-full py-8" id="featured-restaurants">
       <div className="container mx-auto text-center my-8">
-        <h2
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           className="text-4xl font-bold text-gray-800 my-4"
-          data-aos="fade-up"
         >
           Featured Restaurants
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        </motion.h2>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
           {restaurants.slice(0, 12).map((restaurant, index) => (
-            <RestaurantCard key={restaurant.slug} restaurant={restaurant} index={index}/>
+            <motion.div key={restaurant.slug} variants={itemVariants}>
+              <RestaurantCard restaurant={restaurant} index={index} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         <br />
-        <div className="mt-4" data-aos="fade-up">
-          <Link
-            href="/restaurants/1"
-            className="bg-teal-500 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300 mt-2"
-          >
-            View All Restaurants
-          </Link>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-4"
+        >
+          <Button asChild size="lg" className="bg-teal-500 hover:bg-teal-700">
+            <Link href="/restaurants/1">View All Restaurants</Link>
+          </Button>
+        </motion.div>
       </div>
     </div>
   );

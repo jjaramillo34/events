@@ -1,4 +1,9 @@
+"use client";
+
 import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Clock } from "lucide-react";
 
 const WorkingHours = ({ restaurant }) => {
   const workingHours = JSON.parse(restaurant.working_hours);
@@ -7,24 +12,43 @@ const WorkingHours = ({ restaurant }) => {
     return null;
   }
 
+  const daysOrder = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
   return (
-    <div className="bg-white p-12 rounded-lg shadow-lg mt-8">
-      <h2 className="text-3xl font-bold text-center mb-6">Working Hours</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Object.keys(workingHours).map((day) => (
-          <div key={day} className="bg-gray-100 p-4 rounded-lg shadow">
-            <h5 className="text-xl font-semibold">{day}</h5>
-            <p className="text-gray-600">
-              {workingHours[day] === "Closed" ? (
-                <span className="text-red-500 font-bold">Closed</span>
-              ) : (
-                workingHours[day]
-              )}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
+    <Card className="mt-8">
+      <CardHeader>
+        <CardTitle className="text-3xl font-bold text-center flex items-center justify-center">
+          <Clock className="mr-2" />
+          Working Hours
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {daysOrder.map((day) => (
+            <Card key={day} className="overflow-hidden">
+              <CardHeader className="bg-gray-100 py-2">
+                <CardTitle className="text-lg font-semibold">{day}</CardTitle>
+              </CardHeader>
+              <CardContent className="py-4">
+                {workingHours[day] === "Closed" ? (
+                  <Badge variant="destructive">Closed</Badge>
+                ) : (
+                  <span className="text-gray-600">{workingHours[day]}</span>
+                )}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 

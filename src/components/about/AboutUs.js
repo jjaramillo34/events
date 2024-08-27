@@ -1,72 +1,84 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const AboutUs = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
 
   return (
-    <section className="bg-gray-100 mb-12 text-gray-800 py-12">
+    <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-16">
       <div className="container mx-auto px-4">
-        <h1
-          className="text-4xl font-semibold text-center uppercase mb-6"
-          data-aos="fade-up"
+        <motion.h1
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+          className="text-4xl font-bold text-center text-gray-800 mb-12"
         >
           About Us
-        </h1>
+        </motion.h1>
 
-        <div className="flex justify-center mb-10">
-          <div
-            id="gif-container"
-            className="relative w-full max-w-4xl mx-auto"
-            data-aos="zoom-in"
-          >
-            <Image
-              src="/img/animation.gif"
-              alt="Animation Placeholder"
-              className="block mx-auto rounded-lg shadow-lg"
-              width="400"
-              height="400"
-              unoptimized={true}
-            />
-          </div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+          className="flex justify-center mb-12"
+        >
+          <Card className="w-full max-w-4xl overflow-hidden">
+            <CardContent className="p-0">
+              <Image
+                src="/img/animation.gif"
+                alt="Animation Placeholder"
+                width={500}
+                height={400}
+                layout="responsive"
+                className="rounded-t-lg"
+                unoptimized={true}
+              />
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        <div className="grid gap-8 md:grid-cols-2 mb-12">
+          {[
+            "We are a team of passionate foodies dedicated to uncovering the finest restaurants, events, rooftops, and hidden spots in NYC.",
+            "Our mission is to guide you to the best dining experiences and exciting spots that this vibrant city has to offer.",
+            "Whether you're searching for a cozy café, an exquisite rooftop restaurant, or an exclusive event, we have you covered.",
+            "If you have any questions or suggestions, feel free to reach out to us.",
+          ].map((text, index) => (
+            <motion.div
+              key={index}
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+              custom={index}
+            >
+              <Card>
+                <CardContent className="p-6">
+                  <p className="text-gray-700">{text}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="text-lg mb-10">
-          <p className="text-center mb-4" data-aos="fade-right">
-            We are a team of passionate foodies dedicated to uncovering the
-            finest restaurants, events, rooftops, and hidden spots in NYC.
-          </p>
-          <p className="text-center mb-4" data-aos="fade-left">
-            Our mission is to guide you to the best dining experiences and
-            exciting spots that this vibrant city has to offer.
-          </p>
-          <p className="text-center mb-4" data-aos="fade-right">
-            Whether you&apos;re searching for a cozy café, an exquisite rooftop
-            restaurant, or an exclusive event, we have you covered.
-          </p>
-          <p className="text-center" data-aos="fade-left">
-            If you have any questions or suggestions, feel free to
-            <a href="/contact" className="text-teal-500 hover:underline ml-1">
-              contact us
-            </a>
-            .
-          </p>
-        </div>
-
-        <div className="text-center" data-aos="zoom-in">
-          <a
-            href="/contact"
-            className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 ease-in-out shadow-lg"
-          >
-            Contact Us
-          </a>
-        </div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+          className="text-center"
+        >
+          <Button asChild size="lg" className="bg-teal-500 hover:bg-teal-600">
+            <Link href="/contact">Contact Us</Link>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,25 +1,29 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowLeft, Mail } from "lucide-react";
 
 const UserActionButtons = () => {
   return (
-    <div className="flex justify-center space-x-4 mt-8 p-4 mx-auto max-w-4xl">
-      {/* Back to Restaurants Button */}
-      <Link
-        href="/restaurants"
-        className="bg-gray-300 text-gray-800 hover:bg-gray-400 hover:text-white font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow hover:shadow-md"
-      >
-        Back to Restaurants
-      </Link>
-
-      {/* Contact Us Button */}
-      <Link
-        href="/contact"
-        className="bg-blue-500 text-white hover:bg-blue-600 hover:text-white font-semibold py-3 px-6 rounded-full transition duration-300 ease-in-out shadow hover:shadow-md"
-      >
-        Contact Us
-      </Link>
-    </div>
+    <Card className="mt-8">
+      <CardContent className="flex flex-col sm:flex-row justify-center items-center gap-4 p-6">
+        <Button variant="outline" asChild>
+          <Link href="/restaurants" className="flex items-center">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Restaurants
+          </Link>
+        </Button>
+        <Button asChild>
+          <Link href="/contact" className="flex items-center">
+            <Mail className="mr-2 h-4 w-4" />
+            Contact Us
+          </Link>
+        </Button>
+      </CardContent>
+    </Card>
   );
 };
 

@@ -1,70 +1,76 @@
 import { loadData } from "../../../../helpers/utils";
 import slugify from "slugify";
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
+  if (req.method !== "GET") {
+    return res.status(405).json({ error: "Method Not Allowed" });
+  }
+
   const { neighborhood } = req.query;
 
+  if (!neighborhood) {
+    return res
+      .status(400)
+      .json({ error: "Neighborhood parameter is required" });
+  }
+
   try {
-    const restaurants = loadData("data/restaurants.json");
-    const neighData = loadData("data/neighborhoods1.json");
+    const [restaurants, neighData] = await Promise.all([
+      loadData("data/restaurants.json"),
+      loadData("data/neighborhoods1.json"),
+    ]);
 
-    // Manually set slugs for specific neighborhoods
-    neighData.forEach((item) => {
-      if (item.neighborhood === "Sunnyside-St") {
-        item.neighborhood_slug = "sunnyside-st";
-      } else if (item.neighborhood === "Murray Hill-Qns") {
-        item.neighborhood_slug = "murray-hill-qns";
-      } else {
-        item.neighborhood_slug = slugify(
-          (item.neighborhood || "").toLowerCase()
-        );
-      }
-    });
+    if (!Array.isArray(restaurants) || !Array.isArray(neighData)) {
+      throw new Error("Invalid data format");
+    }
 
-    const filteredNeighData = neighData.filter(
+    // Process neighborhood data
+    const processedNeighData = neighData.map((item) => ({
+      ...item,
+      neighborhood_slug:
+        item.neighborhood === "Sunnyside-St"
+          ? "sunnyside-st"
+          : item.neighborhood === "Murray Hill-Qns"
+          ? "murray-hill-qns"
+          : slugify((item.neighborhood || "").toLowerCase()),
+    }));
+
+    const neighborhoodData = processedNeighData.find(
       (item) => item.neighborhood_slug === neighborhood
     );
 
-    if (!filteredNeighData.length) {
+    if (!neighborhoodData) {
       return res.status(404).json({ error: "Neighborhood not found" });
     }
-    const name = filteredNeighData[0].neighborhood;
-    const neighborhood_slug = filteredNeighData[0].neighborhood_slug;
-    const summary = filteredNeighData[0].summary;
-    const transportation = filteredNeighData[0].transportation;
-    const photos = filteredNeighData[0].photos;
-    const demographics = filteredNeighData[0].demographics;
-    const places = filteredNeighData[0].places;
 
     const neighborhoodRestaurants = restaurants.filter(
       (restaurant) => restaurant.neighborhood_slug === neighborhood
     );
 
-    const count = neighborhoodRestaurants.length;
-
-    if (!neighborhoodRestaurants.length) {
+    if (neighborhoodRestaurants.length === 0) {
       return res
         .status(404)
         .json({ error: "No restaurants found in this neighborhood" });
     }
 
-    const jsonObject = {
-      name: name,
-      neighborhood_slug: neighborhood_slug,
-      count: count,
-      summary: summary,
-      transportation: transportation,
-      photos: photos,
-      demographics: demographics,
-      places: places,
+    const response = {
+      name: neighborhoodData.neighborhood,
+      neighborhood_slug: neighborhoodData.neighborhood_slug,
+      count: neighborhoodRestaurants.length,
+      summary: neighborhoodData.summary,
+      transportation: neighborhoodData.transportation,
+      photos: neighborhoodData.photos,
+      demographics: neighborhoodData.demographics,
+      places: neighborhoodData.places,
       restaurants: neighborhoodRestaurants,
     };
 
-    return res.status(200).json(jsonObject);
-  } catch (e) {
-    console.error(
-      `Failed to retrieve data for neighborhood ${neighborhood}: ${e}`
-    );
-    return res.status(500).json({ error: "Internal server error" });
+    res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate");
+    return res.status(200).json(response);
+  } catch (error) {
+    console.error(`Error in neighborhood API for ${neighborhood}:`, error);
+    return res
+      .status(500)
+      .json({ error: "Internal Server Error", message: error.message });
   }
 }

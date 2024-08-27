@@ -1,4 +1,9 @@
+"use client";
+
 import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Tag } from "lucide-react";
 
 const PopularTags = ({ restaurant }) => {
   const tags = restaurant.reviews_tags
@@ -6,23 +11,31 @@ const PopularTags = ({ restaurant }) => {
     : [];
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg mt-8">
-      <h2 className="text-4xl font-bold text-center mb-6">Popular Tags</h2>
-      <div className="flex flex-wrap justify-center gap-2">
+    <Card className="mt-8">
+      <CardHeader>
+        <CardTitle className="text-3xl font-bold text-center flex items-center justify-center">
+          <Tag className="mr-2" />
+          Popular Tags
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
         {tags.length > 0 ? (
-          tags.map((tag, index) => (
-            <span
-              key={index}
-              className="bg-teal-300 text-teal-900 text-sm font-semibold px-3 py-1 rounded-full"
-            >
-              {tag}
-            </span>
-          ))
+          <div className="flex flex-wrap justify-center gap-2">
+            {tags.map((tag, index) => (
+              <Badge
+                key={index}
+                variant="secondary"
+                className="text-sm font-semibold px-3 py-1 bg-teal-100 text-teal-800 hover:bg-teal-200 transition-colors cursor-pointer"
+              >
+                {tag}
+              </Badge>
+            ))}
+          </div>
         ) : (
-          <p className="text-gray-500">No available tags</p>
+          <p className="text-center text-gray-500">No available tags</p>
         )}
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 

@@ -8,6 +8,8 @@ import NavigationCards from "@/components/rest/NavigationCards";
 
 const fetchRestaurants = async (page) => {
   const baseUrl = getBaseUrl();
+  console.log("Test this line");
+  console.log(baseUrl);
   const response = await fetch(`${baseUrl}/api/restaurants/${page}`, {
     cache: "no-store",
   });
@@ -52,16 +54,8 @@ const RestaurantsPage = async ({ params }) => {
           <h2 className="text-4xl font-bold text-gray-800 my-4">Restaurants</h2>
           <p className="text-red-500">Error: {error.message}</p>
           <div className="my-8">
-            <Link href="/">
-              <a className="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-full transition-colors duration-300">
-                Go Back Home
-              </a>
-            </Link>
-            <Link href="/restaurants/1">
-              <a className="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-full transition-colors duration-300 ml-4">
-                Go to Restaurants
-              </a>
-            </Link>
+            <Link href="/">Go Back Home</Link>
+            <Link href="/restaurants/1">Go to Restaurants</Link>
           </div>
         </div>
       </MainLayout>
